@@ -1,0 +1,15 @@
+mixin logo(s1='Bare', s2='CSS')
+  style.
+    #logo {
+      font-weight: 600;
+      margin: .5rem .25rem;
+      padding: .25rem .5rem;
+      display: inline-block;
+      border-radius:.3rem;
+    }
+    #logo .s1 { color:#fff }
+    #logo .s2 { color:#6481ff }
+    #logo:hover { background-color:#8883 }
+    #logo:active { opacity:.3 }
+  //- style.
+  #logo|#[span.s1!=s1]#[span.s2!=s2]

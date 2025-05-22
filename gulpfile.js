@@ -27,7 +27,8 @@ const main = (() => {
   const
     buildList = {
       pug: [
-        'index'
+        'index',
+        'basics'
       ],
       scss: [
         'core_1'
@@ -35,7 +36,8 @@ const main = (() => {
     },
     watchList = {
       pug: [
-        'index'
+        'index',
+        'basics'
       ],
       scss: [
         'core_1'

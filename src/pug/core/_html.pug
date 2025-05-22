@@ -1,0 +1,44 @@
+include _mixins
+
+block vars
+  include _vars
+
+block document
+  doctype html
+  html
+
+    block head
+      head
+
+        block meta
+          title !{title}
+          meta#_color_scheme(name="color-scheme" content="light dark")
+
+        block stylesheet
+          link#_style(rel="stylesheet" media='all' href=homeUri+"/css/main.css")
+
+    block body
+      body
+
+        block header
+          header !{title} / _html layout
+
+        block main
+          main
+
+            block article
+              article._container|hi, there
+
+            block aside
+              aside
+        
+        block footer
+          footer
+
+        block widget
+          aside
+        
+        block script
+          script.
+            console.log('hi, there');
+          //- script.
