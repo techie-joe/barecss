@@ -1,0 +1,19 @@
+{
+    "__TLDR" : "compile any .ts file and put it into outDir",
+    
+    "compilerOptions": {
+        "module": "CommonJS",
+        "target": "ES6",
+        "outDir": "src/js",
+        "rootDir": "src/ts",
+        "strict": true,
+        "sourceMap": false,
+        "strictNullChecks": true,
+        "strictFunctionTypes": true,
+        "removeComments": true
+    },
+    "exclude": [
+        "node_modules",
+        "**/node_modules/*"
+    ]
+}
