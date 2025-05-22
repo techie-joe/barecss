@@ -1,7 +1,31 @@
-
+<!DOCTYPE html>
 <html>
   <head>
-    <meta id="_color_scheme" name="color-scheme" content="light dark"/>
+    <title>BareCSS</title>
+    <meta id="_color_scheme" name="color-scheme" content="light dark">
+    <link id="_style" rel="stylesheet" media="all" href="css/main.css">
   </head>
-  <body>hi, there</body>
+  <body>
+    <header>
+      <div>
+        <style>
+          #logo {
+            font-weight: 600;
+            margin: .5rem .25rem;
+            padding: .25rem .5rem;
+            display: inline-block;
+            cursor: pointer;
+            border-radius:.3rem;
+          }
+          #logo .s1 { color:#fff }
+          #logo .s2 { color:#6481ff }
+          #logo:hover { background-color:#8883 }
+        </style>
+        <div id="logo"><span class="s1">Bare</span><span class="s2">CSS</span></div>
+      </div>
+    </header>
+    <main>
+      <article class="_container">hi, there</article>
+    </main>
+  </body>
 </html>
