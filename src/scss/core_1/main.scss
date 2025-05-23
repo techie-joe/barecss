@@ -1,5 +1,6 @@
 
-@use "_mixins";
+@use "_mixins" as *;
+@use "_colors" as *;
 
 // ---------------------------------------------------------------
 // variables
@@ -8,14 +9,6 @@
 // fonts
 $sans: Arial,sans-serif;
 $baseFont: $sans;
-
-// colors
-$baseBg: #DDD;
-$baseFg: #222;
-
-// dark colors
-$dark_baseBg: #222;
-$dark_baseFg: #DDD;
 
 // ---------------------------------------------------------------
 // normalize
@@ -49,10 +42,28 @@ footer ._container,
 html,body { background-color: $baseBg; color: $baseFg; }
 hr { border-top-color: #AAA;border-bottom-color:#FFF }
 
+a {
+  @extend ._u;
+  &:visited { color: $linkFg_visited }
+  &._fresh,
+  &,&:hover { color: $linkFg }
+  &:active  { color: $linkFg_active }
+}
+
+
 html._dark {
+
   footer ._container,
   &,body { background-color: $dark_baseBg; color: $dark_baseFg; }
   hr { border-top-color: #000;border-bottom-color:#444 }
+
+  a {
+    &:visited { color: $dark_linkFg_visited }
+    &._fresh,
+    &,&:hover { color: $dark_linkFg }
+    &:active  { color: $dark_linkFg_active }
+  }
+
 }
 
 // ---------------------------------------------------------------
@@ -81,6 +92,12 @@ footer {
 // ---------------------------------------------------------------
 
 ._sans { font-family: $sans }
+
+._u {
+  text-decoration: underline;
+  text-underline-offset: .12em; // improve readability
+}
+._u_dot { @extend ._u; text-decoration: underline dotted }
 
 ._inline { display: inline }
 ._block { display: block }

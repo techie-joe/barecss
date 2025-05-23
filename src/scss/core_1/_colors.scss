@@ -1,0 +1,34 @@
+
+// colors
+$baseBg: #DDD;
+$baseFg: #222;
+
+// dark colors
+$dark_baseBg: #222;
+$dark_baseFg: #DDD;
+
+// color names
+$blue   : #1b36b0;
+$purple : #992299;
+$orange : #DD7700;
+$red    : #DD0000;
+$green  : #008800;
+$contra : #000000;
+
+// dark color names
+$dark_blue   : #7a8eea;
+$dark_purple : #c17ac1;
+$dark_orange : #e39f40;
+$dark_red    : #ff4d4d;
+$dark_green  : #00aa00;
+$dark_contra : #ffffff;
+
+// link colors
+$linkFg          : $blue;
+$linkFg_visited  : $purple;
+$linkFg_active   : $red;
+
+// dark link colors
+$dark_linkFg          : $dark_blue;
+$dark_linkFg_visited  : $dark_purple;
+$dark_linkFg_active   : $dark_red;
