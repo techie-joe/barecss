@@ -1,4 +1,4 @@
-# barecss
+# BareCSS
 Minimal framework for a clean layout.
 
 [Visit site](https://techie-joe.github.io/barecss/site)
