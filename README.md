@@ -40,3 +40,10 @@ LICENSE : MIT
 - gulpfile.js : the gulper task definitions.
 - package.json : nodejs project metadata.
 - _TODO : developer notes to focus & drive progress.
+
+&nbsp;
+  
+---
+
+| **[HOME](https://techie-joe.github.io)** | [View source on GitHub][source] |
+[source]: https://github.com/techie-joe/BareCSS "Techie Joe's BareCSS repository"
