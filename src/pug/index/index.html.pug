@@ -6,11 +6,6 @@ block append vars
 
 block append style
   style.
-    blockquote { 
-      background-color: #8882;
-      padding: 2em;
-      margin: 1em;
-    }
   //- style.
 
 block header
@@ -27,12 +22,15 @@ block article
   article._container
     pre
       .
-        To create the best collection of short ways to get the desired layout.
+        Vision  : !{vision}
 
         Author  : !{author}
         Year    : !{year}
         Version : !{version}
         LICENSE : MIT
+      //- 
 
-        Copyright (c) !{year} !{author}
-
+block footer
+  footer
+    hr._m0
+    ._container: small| Copyright (c) !{year} !{author}
