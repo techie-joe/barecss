@@ -2,6 +2,7 @@ extends ../../core/_html
 include ../../core/_logo
 
 block append vars
+  - pageid = 'basics'
   - title = name
 
 block header
@@ -11,9 +12,7 @@ block header
   hr
 
 block article
-  nav._container
-    | #[a(href=homeUri) Home] 
-    | Basics 
+  nav._container: +main_nav
   hr
   article._container
     pre

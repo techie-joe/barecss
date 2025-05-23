@@ -1,7 +1,8 @@
 include _mixins
+include _vars
+include _nav
 
 block vars
-  include _vars
 
 block document
   doctype html
@@ -11,11 +12,10 @@ block document
       head
 
         block meta
-          title !{title}
-          meta#_color_scheme(name="color-scheme" content="light dark")
+          include _meta
 
         block stylesheet
-          link#_style(rel="stylesheet" media='all' href=homeUri+"/css/main.css")
+          link#_style(rel="stylesheet" media='all' href=homeUri+"css/main.css")
         
         block style
           style.
@@ -46,7 +46,7 @@ block document
           aside
         
         block script
-          script(src=homeUri+"/js/thm.js")
+          script(src=homeUri+"js/thm.js")
           script.
             console.log('hi, there');
           //- script.

@@ -1,0 +1,11 @@
+mixin main_nav
+  -
+    var main_nav_links = [
+      ['index',homeUri,'Home'],
+      ['basics','basics','Basics'],
+    ];
+  each v in main_nav_links
+    if pageid === v[0]
+      | #{v[2]} 
+    else
+      | #[a(href=v[1]) #{v[2]}] 
