@@ -7,7 +7,12 @@ $sans: Arial,sans-serif;
 $baseFont: $sans;
 
 // colors
-$baseBg: #222;
+$baseBg: #DDD;
+$baseFg: #222;
+
+// dark colors
+$dark_baseBg: #222;
+$dark_baseFg: #DDD;
 
 // ---------------------------------------------------------------
 // normalize
@@ -26,12 +31,19 @@ html,body { margin:0 }
 // ---------------------------------------------------------------
 
 html,body { font-family: $baseFont; }
+hr { height:1px;border:1px solid #8884; }
 
 // ---------------------------------------------------------------
 // theme color
 // ---------------------------------------------------------------
 
-html,body { background-color: $baseBg; }
+html,body { background-color: $baseBg; color: $baseFg; }
+hr { border-top-color: #AAA;border-bottom-color:#FFF }
+
+html._dark {
+  &,body { background-color: $dark_baseBg; color: $dark_baseFg; }
+  hr { border-top-color: #000;border-bottom-color:#444 }
+}
 
 // ---------------------------------------------------------------
 // custom

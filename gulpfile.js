@@ -24,30 +24,10 @@ const
 // isString = (...ss) => ss.every(s => typeof s === 'string' && s.length > 0);
 
 const main = (() => {
-  const
-    buildList = {
-      pug: [
-        'index',
-        'basics'
-      ],
-      scss: [
-        'core_1'
-      ]
-    },
-    watchList = {
-      pug: [
-        'index',
-        'basics'
-      ],
-      scss: [
-        'core_1'
-      ]
-    },
-    _dest = {
-      pages: 'site',
-      css: 'site/css',
-      scripts: 'site/js',
-    };
+  const { buildList, watchList, _dest } = require('./gulplist');
+  if (buildList && watchList && _dest) { } else {
+    throw new Error('Please define gulplist.js');
+  }
   // map source lists
   [buildList, watchList].forEach(list => {
     ['html', 'php', 'txt', 'md'].forEach(type => {
@@ -56,9 +36,19 @@ const main = (() => {
     list.scss = list.scss.map(item => `src/scss/${item}/**/*.scss`);
   });
   const
+    onerror = function onerror(error) {
+      const I = ':', { code, msg, fileName, line, column } = error;
+      // log(error);
+      log([
+        code + I + msg,
+        fileName + I + line + I + column,
+      ].join('\n'));
+      this.emit('end');
+    },
     html = (source, destination) => async function html_transpiler() {
       log(`Transpiling HTML from: ${source}`)
       return src(source)
+        .on('error', onerror)
         .pipe(pug({ pretty: true }))
         .pipe(ext('.html'))
         .pipe(dest(destination));
@@ -66,6 +56,7 @@ const main = (() => {
     php = (source, destination) => async function php_transpiler() {
       log(`Transpiling PHP from: ${source}`)
       return src(source)
+        .on('error', onerror)
         .pipe(pug({ pretty: true }))
         .pipe(ext('.php'))
         .pipe(dest(destination));
@@ -73,6 +64,7 @@ const main = (() => {
     txt = (source, destination) => async function txt_transpiler() {
       log(`Transpiling TXT from: ${source}`)
       return src(source)
+        .on('error', onerror)
         .pipe(pug())
         .pipe(ext('.txt'))
         .pipe(dest(destination));
@@ -80,6 +72,7 @@ const main = (() => {
     md = (source, destination) => async function md_transpiler() {
       log(`Transpiling MD from: ${source}`)
       return src(source)
+        .on('error', onerror)
         .pipe(pug())
         .pipe(ext('.md'))
         .pipe(dest(destination));
@@ -90,7 +83,7 @@ const main = (() => {
     scss = (source, destination, opt = sassOpt) => async function scss_transpiler() {
       log(`Transpiling SCSS from: ${source}`)
       return src(source)
-        .pipe(sass(opt).on("error", sass.logError))
+        .pipe(sass(opt).on('error', sass.logError))
         .pipe(cleanCSS())
         .pipe(dest(destination));
     },

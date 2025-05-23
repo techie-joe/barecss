@@ -1,15 +1,20 @@
-mixin logo(s1='Bare', s2='CSS')
+block append style
   style.
     #logo {
       font-weight: 600;
-      margin: .5rem .25rem;
       padding: .25rem .5rem;
       display: inline-block;
-      border-radius:.3rem;
+      cursor: default;
+      border-radius: .3rem;
     }
-    #logo .s1 { color:#fff }
+    #logo .s1 { color:#000 }
     #logo .s2 { color:#6481ff }
-    #logo:hover { background-color:#8883 }
-    #logo:active { opacity:.3 }
+    ._dark #logo .s1 { color:#fff }
+    a #logo { cursor:pointer }
+    a #logo:hover { background-color:#8883 }
+    a #logo:active { opacity:.3 }
+    .maindesc { margin:0 .5rem;font-size:.9em }
   //- style.
-  #logo|#[span.s1!=s1]#[span.s2!=s2]
+
+mixin logo(s1,s2)
+  #logo|#[span.s1!=s1||'Bare']#[span.s2!=s2||'CSS']

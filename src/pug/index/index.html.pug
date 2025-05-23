@@ -1,9 +1,38 @@
 extends ../core/_html
 include ../core/_logo
 
+block append vars
+  - title = name
+
+block append style
+  style.
+    blockquote { 
+      background-color: #8882;
+      padding: 2em;
+      margin: 1em;
+    }
+  //- style.
+
 block header
-  header: a(style="cursor:default"): +logo
+  header._container
+    +logo
+    span.maindesc= description
+  hr
 
 block article
+  nav._container
+    | Home 
+    a(href='basics') Basics
+  hr
   article._container
-    a(href='basics') basics
+    pre
+      .
+        To create the best collection of short ways to get the desired layout.
+
+        Author  : !{author}
+        Year    : !{year}
+        Version : !{version}
+        LICENSE : MIT
+
+        Copyright (c) !{year} !{author}
+

@@ -1,8 +1,10 @@
 # BareCSS
 Minimal CSS framework for a clean layout.
 
+[Visit site](site)
+
 ## Vision
-A collection of the shortest way to get the desired layout.
+To create the best collection of short ways to get the desired layout.
 
 ## Credit
 ```

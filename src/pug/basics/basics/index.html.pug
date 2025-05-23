@@ -1,9 +1,21 @@
 extends ../../core/_html
 include ../../core/_logo
 
+block append vars
+  - title = name
+
 block header
-  header: a(href=homeUri): +logo
+  header._container
+    a(href=homeUri): +logo
+    span.maindesc= description
+  hr
 
 block article
+  nav._container
+    | #[a(href=homeUri) Home] 
+    | Basics 
+  hr
   article._container
-    |basics
+    pre
+      .
+        // hey

@@ -16,6 +16,11 @@ block document
 
         block stylesheet
           link#_style(rel="stylesheet" media='all' href=homeUri+"/css/main.css")
+        
+        block style
+          style.
+            /* write your style here */
+          //- style.
 
     block body
       body
@@ -39,6 +44,7 @@ block document
           aside
         
         block script
+          script(src=homeUri+"/js/thm.js")
           script.
             console.log('hi, there');
           //- script.
