@@ -1,3 +1,6 @@
+
+@use "_mixins";
+
 // ---------------------------------------------------------------
 // variables
 // ---------------------------------------------------------------
@@ -25,6 +28,10 @@ html,body { margin:0 }
 // ---------------------------------------------------------------
 
 ._container { margin:.5rem }
+details { margin:-.5rem; box-sizing:border-box; }
+summary { cursor:pointer;padding:.25em .5em }
+summary:hover { background-color: #8883; }
+summary:active { opacity:.3 }
 
 // ---------------------------------------------------------------
 // theme basics
@@ -52,8 +59,20 @@ html._dark {
 // custom
 // ---------------------------------------------------------------
 
+// ._p,p,pre { margin: .5rem 0 }
+// ._h7,._t1 { font-size: 1rem }
+// ._t1 { font-weight: normal }
+// ._header_layout,
+// ._footer_layout,
+// ._main_layout { margin:.5rem }
+// ._view_layout,
+// ._mainflex { height: 100% }
+// ._sidecolum { flex: 0 1 10em }
+// ._maincolum { flex:auto }
+// ._menuitem { margin:.25rem }
+
 footer {
-  & { position:absolute;bottom:0;left:0;right:0 }
+  & { position:absolute;top:auto;bottom:0;left:0;right:0 }
   ._container { margin:0;padding:.5rem }
 }
 
@@ -63,6 +82,13 @@ footer {
 
 ._sans { font-family: $sans }
 
+._inline { display: inline }
+._block { display: block }
+._inblock { display: inline-block }
+
 ._scrollable { overflow:auto }
+
+._flex { display:flex }
+._fullview { position:absolute;top:0;bottom:0;left:0;right:0 }
 
 ._m0 { margin:0 !important }

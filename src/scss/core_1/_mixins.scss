@@ -1,0 +1,6 @@
+@mixin position($top: null, $left: null, $bottom: null, $right: null, $important: false) {
+  @if $top { top: #{$top}#{important($important)}; }
+  @if $bottom { bottom: #{$bottom}#{important($important)}; }
+  @if $right { right: #{$right}#{important($important)}; }
+  @if $left { left: #{$left}#{important($important)}; }
+}

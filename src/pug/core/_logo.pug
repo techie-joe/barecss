@@ -22,5 +22,11 @@ block append style
     }
   //- style.
 
+mixin _logo
+  if pageid==='index'
+    span: block
+  else
+    a(href=homeUri): block
+
 mixin logo(s1,s2)
-  #logo|#[span.s1!=s1||'Bare']#[span.s2!=s2||'CSS']
+  +_logo: #logo|#[span.s1!=s1||'Bare']#[span.s2!=s2||'CSS']

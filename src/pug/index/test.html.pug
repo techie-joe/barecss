@@ -1,0 +1,34 @@
+extends ../core/_html
+include ../core/_logo
+
+block append vars
+  - pageid = 'test'
+  - title = `Test | ${name}`
+  - description = 'Testing upcoming features and upgrades.'
+
+block append style
+  style.
+  //- style.
+
+block header
+  header._container
+    +logo
+    span.maindesc= description
+  hr
+
+block article
+  nav._container: +main_nav
+  hr
+  article._container
+    details
+      summary Summary
+      div._content._scrollable
+        ._container: pre.
+          // details
+        //- 
+  hr
+  article._container
+    pre._scrollable
+      .
+        // test
+      //- 

@@ -1,11 +1,13 @@
 mixin main_nav
   -
     var main_nav_links = [
-      ['index',homeUri,'Home'],
+      //- pageid, uri, title
+      ['index','','Home'],
       ['basics','basics','Basics'],
+      ['test','test.html','Test'],
     ];
   each v in main_nav_links
     if pageid === v[0]
       | #{v[2]} 
     else
-      | #[a(href=v[1]) #{v[2]}] 
+      | #[a(href=homeUri+v[1]) #{v[2]}] 
