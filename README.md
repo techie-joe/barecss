@@ -1,7 +1,7 @@
-# BareCSS
+# barecss
 Minimal framework for a clean layout.
 
-[Visit site](https://techie-joe.github.io/BareCSS/site)
+[Visit site](https://techie-joe.github.io/barecss/site)
 
 ## Vision
 To create the best collection of short ways to get a clean layout.
@@ -47,4 +47,4 @@ LICENSE : MIT
 
 | **[HOME](https://techie-joe.github.io)** | [View source on GitHub][source] |
 
-[source]: https://github.com/techie-joe/BareCSS "Techie Joe's BareCSS repository"
+[source]: https://github.com/techie-joe/barecss "Techie Joe's BareCSS repository"
