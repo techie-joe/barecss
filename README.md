@@ -46,4 +46,5 @@ LICENSE : MIT
 ---
 
 | **[HOME](https://techie-joe.github.io)** | [View source on GitHub][source] |
+
 [source]: https://github.com/techie-joe/BareCSS "Techie Joe's BareCSS repository"
