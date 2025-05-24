@@ -1,11 +1,16 @@
 <!DOCTYPE html>
-<html>
+<html class="_hidden" lang="en">
+  
+  <!-- BareCSS v0.1.0.(alpha) |  -->
+  <!-- layout: -->
+  
   <head>
+    <meta charset="utf-8"/>
     <title>BareCSS</title>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1"/>
     <meta id="_color_scheme" name="color-scheme" content="light dark"/>
-    <meta id="_theme_color" name="theme-color" content="#222"/>
+    <meta id="_theme_color" name="theme-color" content="#222222"/>
     <link rel="apple-touch-icon" type="image/png" sizes="180x180" href="/barecss/site/icons/apple-touch-icon.png"/>
     <link rel="icon" type="image/png" sizes="32x32" href="/barecss/site/icons/favicon-32x32.png"/>
     <link rel="icon" type="image/png" sizes="16x16" href="/barecss/site/icons/favicon-16x16.png"/>
@@ -24,8 +29,9 @@
         border-radius: .3rem;
       }
       #logo .s1 { color:#000 }
-      #logo .s2 { color:#6481ff }
+      #logo .s2 { color:#1b36b0 }
       ._dark #logo .s1 { color:#fff }
+      ._dark #logo .s2 { color:#7a8eea }
       a #logo { cursor:pointer }
       a #logo:hover { background-color:#8883 }
       a #logo:active { opacity:.3 }
@@ -55,14 +61,17 @@ Version : 0.1.0.(alpha)
 
 LICENSE : MIT</pre>
       </article>
-      <aside></aside>
+      <aside id="_asides"></aside>
     </main>
     <footer>
       <hr class="_m0">
       <div class="_container"><small>&copy; 2025 Techie Joe. All rights reserved.</small></div>
     </footer>
-    <aside></aside>
-    <script src="/barecss/site/js/theme_v1.0.js"></script>
+    <aside id="_widgets"></aside>
+    <script type="text/javascript" src="/barecss/site/js/theme_v1.0.js?v=0.1.0.(alpha)"></script>
     <script>console.log('hi, there');</script>
+    
+    <!-- IE needs 512+ bytes: https://techie-joe.github.io/library/html5/ie#ie-needs-512-bytes -->
+    
   </body>
 </html>

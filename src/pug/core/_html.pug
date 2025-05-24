@@ -1,17 +1,30 @@
+include _functions
 include _mixins
 include _vars
 include _nav
 
 block vars
+  - INCLUDE_THEMEJS = true
+
+block updatePageData
+  -
+    if(INCLUDE_THEMEJS) { htmlClass.push('_hidden') }
+    og_title = title
+    og_description = description
+    og_url  = siteUrl? siteUrl + '?utm_source=homescreen' : '';
 
 block document
   doctype html
-  html
-
+  html(lang=lang class=htmlClass)
+    |
+    | <!-- #{name} v#{version} | #{copyright} -->
+    | <!-- layout:#{layout} -->
+    |
     block head
       head
 
         block meta
+          meta(charset=charset)/
           include _meta
 
         block stylesheet
@@ -35,7 +48,7 @@ block document
               article._container|hi, there
 
             block aside
-              aside
+              aside#_asides
         
         block footer
           footer
@@ -43,10 +56,22 @@ block document
             ._container: small| &copy; !{year} !{author}. All rights reserved.
 
         block widget
-          aside
+          aside#_widgets
         
         block script
-          script(src=homeUri+"js/theme_v1.0.js")
+          //- +jsv(src)
+
+          if INCLUDE_THEMEJS
+            +jsv(homeUri+'js/theme_v1.0.js')
+
+          if INCLUDE_SERVICE_WORKERS
+            +jsv(homeUri+'sw/sw.j')(defer)
+
           script.
             console.log('hi, there');
           //- script.
+
+        block final
+          |
+          | <!-- IE needs 512+ bytes: https://techie-joe.github.io/library/html5/ie#ie-needs-512-bytes -->
+          |

@@ -1,13 +1,76 @@
 -
-  name = "BareCSS"
+  //- project
+  name        = 'BareCSS'
+  title       = 'BareCSS'
   description = 'Minimal framework for a clean layout.'
-  vision  = 'To create the best collection of a clean layout.'
-  version = '0.1.0.(alpha)'
-  author  = 'Techie Joe'
-  year    = '2025'
-  license = 'MIT'
+  vision      = 'To create the best collection of a clean layout.'
+  version     = '0.1.0.(alpha)'
 
-  homeUri = '/barecss/site/'
+  //- metadata
+  thisYear    = new Date().getFullYear()
 
+  //- credit
+  author      = 'Techie Joe'
+  year        = thisYear
+  license     = 'MIT'
+
+  //- urls
+  localUrl       = 'http://localhost/barecss/site/'
+  siteUrl        = 'https://techiejoe.github.io/barecss'
+  authorUrl      = 'https://techiejoe.github.io'
+  sourceUrl      = 'https://github.com/techie-joe/barecss'
+
+  //- open graph metadata for social media sharing
+  og_url         = siteUrl + '?utm_source=homescreen'
+  og_type        = 'website'
+  og_title       = title
+  og_description = description
+  og_image       = ''
+  og_imageAlt    = ''
+
+  //- uris
+  homeUri     = '/barecss/site/'
+
+  //- styling
   colorScheme = 'light dark'
-  themeColor  = '#222'
+  themeColor  = '#222222'
+  htmlClass   = []
+
+  //- en or en-US following the BCP 47 language tag standard
+  lang        = 'en'
+  charset     = 'utf-8'
+
+  //- theme
+  INCLUDE_THEMEJS = true
+
+  //- progressive web app metadata
+  INCLUDE_MANIFEST        = false
+  INCLUDE_SERVICE_WORKERS = false
+
+mixin pageData
+  +l
+  +join([
+    `name             = ${name}`,
+    `version          = ${version}`,
+    ``,
+    `title            = ${title}`,
+    `description      = ${description}`,
+    `vision           = ${vision}`,
+    ``,
+    `author           = ${author}`,
+    `year             = ${year}`,
+    `license          = ${license}`,
+    ``,
+    `layout           = ${layout}`,
+    `pageid           = ${pageid}`,
+    `siteUrl          = ${siteUrl}`,
+    `homeUri          = ${homeUri}`,
+    ``,
+    `og_url           = ${og_url}`,
+    `og_type          = ${og_type}`,
+    `og_title         = ${og_title}`,
+    `og_description   = ${og_description}`,
+    `og_image         = ${og_image}`,
+    `og_imageAlt      = ${og_imageAlt}`,
+  ])
+  +l

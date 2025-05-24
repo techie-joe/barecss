@@ -38,10 +38,12 @@ const main = (() => {
   const
     redMessage = (message) =>'\x1B[31m'+message+'\x1B[0m',
     onPugError = function onPugError(error) {
-      const I = ':', { code, msg, fileName, line, column } = error;
-      // log(error);
+      const
+        I = ':',
+        { code, msg, fileName, line, column } = error;
       log([
         redMessage('Error:'),
+        error.message,
         code + I + msg,
         fileName + I + line + I + column,
       ].join('\n'));
