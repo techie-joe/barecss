@@ -1,11 +1,11 @@
 
 // colors
 $baseBg: #DDD;
-$baseFg: #222;
+$baseTc: #222;
 
 // dark colors
 $dark_baseBg: #222;
-$dark_baseFg: #DDD;
+$dark_baseTc: #DDD;
 
 // color names
 $blue   : #1b36b0;
@@ -24,11 +24,11 @@ $dark_green  : #00aa00;
 $dark_contra : #ffffff;
 
 // link colors
-$linkFg          : $blue;
-$linkFg_visited  : $purple;
-$linkFg_active   : $red;
+$linkTc          : $blue;
+$linkTc_visited  : $purple;
+$linkTc_active   : $red;
 
 // dark link colors
-$dark_linkFg          : $dark_blue;
-$dark_linkFg_visited  : $dark_purple;
-$dark_linkFg_active   : $dark_red;
+$dark_linkTc          : $dark_blue;
+$dark_linkTc_visited  : $dark_purple;
+$dark_linkTc_active   : $dark_red;

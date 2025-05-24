@@ -4,7 +4,7 @@ mixin main_nav
       //- pageid, uri, title
       ['index','','Home'],
       ['basics','basics','Basics'],
-      ['test','test.html','Test'],
+      ['test','test.html','Lab'],
     ];
   each v in main_nav_links
     a(href=homeUri+v[1] class=(pageid === v[0]?'_active':'')) #{v[2]}

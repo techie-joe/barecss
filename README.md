@@ -4,7 +4,7 @@ Minimal framework for a clean layout.
 [Visit site](https://techie-joe.github.io/barecss/site)
 
 ## Vision
-To create the best collection of short ways to get a clean layout.
+To create the best collection of a clean layout.
 
 ## Credit
 ```
