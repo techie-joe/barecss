@@ -1,6 +1,16 @@
+@function is($important) {
+  @return #{if($important,' !important','')};
+}
+
 @mixin position($top: null, $left: null, $bottom: null, $right: null, $important: false) {
-  @if $top { top: #{$top}#{important($important)}; }
-  @if $bottom { bottom: #{$bottom}#{important($important)}; }
-  @if $right { right: #{$right}#{important($important)}; }
-  @if $left { left: #{$left}#{important($important)}; }
+  @if $top { top: $top is($important) }
+  @if $bottom { bottom: $bottom is($important) }
+  @if $right { right: $right is($important) }
+  @if $left { left: $left is($important) }
+}
+
+@mixin color($color: null, $bg_color: null, $bc_color: null, $important: false) {
+  @if $color { color: $color is($important) }
+  @if $bg_color { background-color: $bg_color is($important) }
+  @if $bc_color { border-color: $bc_color is($important) }
 }

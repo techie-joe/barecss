@@ -7,7 +7,5 @@ mixin main_nav
       ['test','test.html','Test'],
     ];
   each v in main_nav_links
-    if pageid === v[0]
-      | #{v[2]} 
-    else
-      | #[a(href=homeUri+v[1]) #{v[2]}] 
+    a(href=homeUri+v[1] class=(pageid === v[0]?'_active':'')) #{v[2]}
+    +_

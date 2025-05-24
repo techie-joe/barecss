@@ -37,33 +37,64 @@ blockquote { background-color: #8882; padding: 2em; margin: 1em; }
 // ---------------------------------------------------------------
 // theme color
 // ---------------------------------------------------------------
+// 
+// ------------------------------------------------ ::selection */
+// - must follow this format. - will not work otherwise.
+// - each vendor specific must be seperately declared.
+// - cant combine. so dont use entend.
+// - use background-color not background.
+// - dont append or include other class.
+// ---------------------------------------------------------------
+$select_bg    : #FFFF00AA;
+$select_tc    : #000;
+@mixin selection {
+  background-color: $select_bg !important;
+  color: $select_tc !important;
+  text-shadow: none !important;
+}
+::-moz-selection { @include selection; }
+::selection      { @include selection; }
+._select         { @include selection; }
+// ---------------------------------------------------------------
 
-footer ._container,
-html,body { background-color: $baseBg; color: $baseFg; }
-hr { border-top-color: #AAA;border-bottom-color:#FFF }
-
-a {
-  @extend ._u;
-  &:visited { color: $linkFg_visited }
-  &._fresh,
-  &,&:hover { color: $linkFg }
-  &:active  { color: $linkFg_active }
+._color {
+  & { @include color( $baseFg, $baseBg ); }
+  &._dark,._dark & { @include color( $dark_baseFg, $dark_baseBg ); }
 }
 
+._color_1 {
+  & { @include color( $baseFg, #ccc ); }
+  &._dark,._dark & { @include color( $dark_baseFg, #111 ); }
+}
 
-html._dark {
+._color_2 {
+  & { @include color( $baseFg, #eee ); }
+  &._dark,._dark & { @include color( $dark_baseFg, #333 ); }
+}
 
-  footer ._container,
-  &,body { background-color: $dark_baseBg; color: $dark_baseFg; }
-  hr { border-top-color: #000;border-bottom-color:#444 }
+footer ._container,
+html,body { @extend ._color; }
+hr {
+  & { border-top-color:#AAA;border-bottom-color:#FFF }
+  &._dark,._dark & { border-top-color:#000;border-bottom-color:#444 }
+}
 
-  a {
-    &:visited { color: $dark_linkFg_visited }
-    &._fresh,
+a,._a {
+  @extend ._u;
+  
+  &._no_visited,
+  &,&:hover { color: $linkFg }
+  &:visited { color: $linkFg_visited }
+  &:active  { color: $linkFg_active }
+
+  &._active { color: inherit !important; }
+
+  &._dark,._dark & {
+    &._no_visited,
     &,&:hover { color: $dark_linkFg }
+    &:visited { color: $dark_linkFg_visited }
     &:active  { color: $dark_linkFg_active }
   }
-
 }
 
 // ---------------------------------------------------------------
@@ -93,17 +124,26 @@ footer {
 
 ._sans { font-family: $sans }
 
-._u {
+u,._u {
   text-decoration: underline;
   text-underline-offset: .12em; // improve readability
 }
-._u_dot { @extend ._u; text-decoration: underline dotted }
+._u_dotted { @extend ._u; text-decoration: underline dotted }
 
 ._inline { display: inline }
 ._block { display: block }
 ._inblock { display: inline-block }
 
 ._scrollable { overflow:auto }
+
+._no_select {
+  -webkit-touch-callout:none;
+  -webkit-user-select:none;
+  -khtml-user-select:none;
+  -moz-user-select:none;
+  -ms-user-select:none;
+  user-select:none;
+} 
 
 ._flex { display:flex }
 ._fullview { position:absolute;top:0;bottom:0;left:0;right:0 }

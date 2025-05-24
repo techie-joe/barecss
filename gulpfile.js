@@ -36,43 +36,46 @@ const main = (() => {
     list.scss = list.scss.map(item => `src/scss/${item}/**/*.scss`);
   });
   const
-    onerror = function onerror(error) {
+    redMessage = (message) =>'\x1B[31m'+message+'\x1B[0m',
+    onPugError = function onPugError(error) {
       const I = ':', { code, msg, fileName, line, column } = error;
       // log(error);
       log([
+        redMessage('Error:'),
         code + I + msg,
         fileName + I + line + I + column,
       ].join('\n'));
       this.emit('end');
     },
+    slog = (what,source) => log(`Transpiling ${what} from: \n${source.join('\n')}`),
     html = (source, destination) => async function html_transpiler() {
-      log(`Transpiling HTML from: ${source}`)
+      slog('HTML', source);
       return src(source)
-        .on('error', onerror)
+        .on('error', onPugError)
         .pipe(pug({ pretty: true }))
         .pipe(ext('.html'))
         .pipe(dest(destination));
     },
     php = (source, destination) => async function php_transpiler() {
-      log(`Transpiling PHP from: ${source}`)
+      slog('PHP', source);
       return src(source)
-        .on('error', onerror)
+        .on('error', onPugError)
         .pipe(pug({ pretty: true }))
         .pipe(ext('.php'))
         .pipe(dest(destination));
     },
     txt = (source, destination) => async function txt_transpiler() {
-      log(`Transpiling TXT from: ${source}`)
+      slog('TXT', source);
       return src(source)
-        .on('error', onerror)
+        .on('error', onPugError)
         .pipe(pug())
         .pipe(ext('.txt'))
         .pipe(dest(destination));
     },
     md = (source, destination) => async function md_transpiler() {
-      log(`Transpiling MD from: ${source}`)
+      slog('MD', source);
       return src(source)
-        .on('error', onerror)
+        .on('error', onPugError)
         .pipe(pug())
         .pipe(ext('.md'))
         .pipe(dest(destination));
@@ -80,10 +83,15 @@ const main = (() => {
     sassOpt = {
       outputStyle: 'compressed' // compressed | expanded
     },
+    onSassError = function onSassError(error) {
+      log(error.messageOriginal);
+      this.emit('end');
+    },
     scss = (source, destination, opt = sassOpt) => async function scss_transpiler() {
-      log(`Transpiling SCSS from: ${source}`)
+      slog('SCSS', source);
       return src(source)
-        .pipe(sass(opt).on('error', sass.logError))
+        .on('error', onSassError)
+        .pipe(sass(opt))
         .pipe(cleanCSS())
         .pipe(dest(destination));
     },

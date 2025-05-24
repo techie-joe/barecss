@@ -29,4 +29,4 @@ mixin _logo
     a(href=homeUri): block
 
 mixin logo(s1,s2)
-  +_logo: #logo|#[span.s1!=s1||'Bare']#[span.s2!=s2||'CSS']
+  +_logo: #logo._no_select|#[span.s1!=s1||'Bare']#[span.s2!=s2||'CSS']
