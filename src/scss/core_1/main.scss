@@ -28,7 +28,7 @@ $baseFont: $sans;
 ._reset_margin { margin: 0 }
 ._reset_padding { padding: 0 }
 ._reset_fontsize { font-size: 1rem }
-._reset_lineheight { line-height: 1 }
+._reset_lineheight { line-height: 1.5 }
 ._reset_baseline { vertical-align: baseline }
 // ._reset can be used on these elements:
 // html, body, div, span, applet, object, iframe,
@@ -83,7 +83,7 @@ body {
   @extend ._clearfix;
 }
 
-pre { line-height:1.3 }
+pre { line-height:1.25 }
 
 // clearfix : ----------------------------------------------------
 // to clear pass floating elements.
@@ -199,7 +199,7 @@ html,body { @extend ._scrollable; scroll-behavior: smooth; }
 blockquote { padding: 2em; margin: 1em }
 
 details { margin:-.5rem;box-sizing:border-box; }
-summary { padding:.5em }
+summary { padding:.25em .5em }
 summary:hover { background-color:#8883; }
 summary:active { opacity:.3 }
 
@@ -266,22 +266,45 @@ hr {
   &._dark,._dark & { border-top-color:#000;border-bottom-color:#444 }
 }
 
-a,._a {
-  @extend ._u;
-  
-  &:visited { color: $linkTc_visited }
-  &._no_visited,
-  &,&:hover { color: $linkTc }
-  &:active  { color: $linkTc_active }
-
-  &._active { color: inherit !important; }
+a[href],._a {
+  &:visited,&._visited { color: $linkTc_visited }
+  &,&._link            { color: $linkTc }
+  &._neutral           { color: inherit }
+  &:hover,&._hover     { color: $linkTc_hover }
+  &:active,&._active   { color: $linkTc_active }
 
   &._dark,._dark & {
-    &:visited { color: $dark_linkTc_visited }
-    &._no_visited,
-    &,&:hover { color: $dark_linkTc }
-    &:active  { color: $dark_linkTc_active }
+    &:visited,&._visited { color: $dark_linkTc_visited }
+    &,&._link            { color: $dark_linkTc }
+    &._neutral           { color: inherit }
+    &:hover,&._hover     { color: $dark_linkTc_hover }
+    &:active,&._active   { color: $dark_linkTc_active }
   }
+}
+
+a[href]._a1,._a1 {
+  &,&._link {
+    color: inherit;
+    text-decoration: none;
+    display:inline-block;
+    padding:.25em .5em;
+  }
+  &:hover,&._hover { background-color: #8884; }
+  &:active,&._active { background-color: #8888; }
+  
+  &._dark,._dark & {
+    &,&._link {
+      color: inherit;
+      text-decoration: none;
+    }
+  }
+}
+
+a[href]._a2,._a2 {
+  @extend ._a1;
+  margin:.5em .1em;
+  border-radius:.25em;
+  padding:0 .5em;
 }
 
 ._tc_blue   { color: $blue   }
@@ -301,31 +324,12 @@ a,._a {
 }
 
 // ---------------------------------------------------------------
-// custom
-// ---------------------------------------------------------------
-
-// ._p,p,pre { margin: .5rem 0 }
-// ._h7,._t1 { font-size: 1rem }
-// ._t1 { font-weight: normal }
-// ._header_layout,
-// ._footer_layout,
-// ._main_layout { margin:.5rem }
-// ._view_layout,
-// ._mainflex { height: 100% }
-// ._sidecolum { flex: 0 1 10em }
-// ._maincolum { flex:auto }
-// ._menuitem { margin:.25rem }
-
-footer {
-  & { position:absolute;top:auto;bottom:0;left:0;right:0 }
-  ._container { margin:0;padding:.5rem }
-}
-
-// ---------------------------------------------------------------
 // helpers
 // ---------------------------------------------------------------
 
 // cursors
+._cursor_reset { cursor: initial }
+._cursor_default { cursor: default }
 ._cursor_help { cursor: help }
 ._cursor_pointer { cursor: pointer }
 
@@ -348,7 +352,10 @@ u,._u {
   text-decoration: underline;
   text-underline-offset: .12em; // improve readability
 }
-._u_dotted { @extend ._u; text-decoration: underline dotted }
+._u_dotted { @extend ._u; text-decoration-style: dotted !important }
+._u_dashed { @extend ._u; text-decoration-style: dashed !important }
+._u_double { @extend ._u; text-decoration-style: double !important }
+._u_wavy { @extend ._u; text-decoration-style: wavy !important }
 ._no_u, ._no_deco { text-decoration: none !important }
 
 ._i { font-style: italic !important }
@@ -547,5 +554,28 @@ h1, h2, h3 { page-break-after: avoid }
 ._no_print_border { border: none !important; }
 
 } // @media print
+
+// ---------------------------------------------------------------
+// custom
+// ---------------------------------------------------------------
+
+// ._p,p,pre { margin: .5rem 0 }
+// ._h7,._t1 { font-size: 1rem }
+// ._t1 { font-weight: normal }
+// ._header_layout,
+// ._footer_layout,
+// ._main_layout { margin:.5rem }
+// ._view_layout,
+// ._mainflex { height: 100% }
+// ._sidecolum { flex: 0 1 10em }
+// ._maincolum { flex:auto }
+// ._menuitem { margin:.25rem }
+
+.pre { padding:1em 0;margin:0 }
+
+footer {
+  & { position:fixed;top:auto;bottom:0;left:0;right:0 }
+  ._container { margin:0;padding:.5rem }
+}
 
 // ======================================================== EOF */

@@ -1,10 +1,9 @@
 extends ../../core/_html
-include ../../core/_logo
 
 block append vars
   - pageid = 'basics'
   - title = `Basics | ${name}`
-  - description = 'Common layouts & features.'
+  - description = 'Common components.'
 
 block header
   header._container
@@ -15,7 +14,5 @@ block header
 block article
   nav._container: +main_nav
   hr
-  article._container
-    pre
-      .
-        // basics
+  nav._container: +basic_nav
+  hr

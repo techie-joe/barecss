@@ -1,4 +1,28 @@
-<!DOCTYPE html>
+
+<style>
+  #logo {
+    font-weight: 600;
+    margin-left: -.5rem;
+    margin-right: .25rem;
+    padding: .25rem .5rem;
+    display: inline-block;
+    cursor: default;
+    border-radius: .3rem;
+  }
+  #logo .s1 { color:#000 }
+  #logo .s2 { color:#1b36b0 }
+  ._dark #logo .s1 { color:#fff }
+  ._dark #logo .s2 { color:#7a8eea }
+  a #logo { cursor:pointer }
+  a #logo:hover { background-color:#fff }
+  ._dark a #logo:hover { background-color:#fff3 }
+  a #logo:active { opacity:.3 }
+  .maindesc {
+    font-size: 0.9em;
+    line-height: 1.25;
+    vertical-align: text-top;
+  }
+</style><!DOCTYPE html>
 <html class="_hidden" lang="en">
   
   <!-- BareCSS v0.1.0.(alpha) |  -->
@@ -18,82 +42,71 @@
     <!--[if lt IE 9]><script src="//unpkg.com/html5shiv@3.7.3/dist/html5shiv.min.js"></script><![endif]-->
     <link id="_style" rel="stylesheet" media="all" href="/barecss/site/css/main.css">
     <style>/* write your style here */</style>
-    <style>
-      #logo {
-        font-weight: 600;
-        margin-left: -.5rem;
-        margin-right: .25rem;
-        padding: .25rem .5rem;
-        display: inline-block;
-        cursor: default;
-        border-radius: .3rem;
-      }
-      #logo .s1 { color:#000 }
-      #logo .s2 { color:#1b36b0 }
-      ._dark #logo .s1 { color:#fff }
-      ._dark #logo .s2 { color:#7a8eea }
-      a #logo { cursor:pointer }
-      a #logo:hover { background-color:#8883 }
-      a #logo:active { opacity:.3 }
-      .maindesc {
-        font-size: 0.9em;
-        line-height: 1.25;
-        vertical-align: text-top;
-      }
-    </style>
     <style></style>
   </head>
   <body>
     <header class="_container"><a href="/barecss/site/">
-        <div class="_no_select" id="logo"><span class="s1">Bare</span><span class="s2">CSS</span></div></a><span class="maindesc">Lab</span>
+        <div class="_no_select" id="logo"><span class="s1">Bare</span><span class="s2">CSS</span></div></a><span class="maindesc">Testing new stuff.</span>
     </header>
     <hr>
     <main>
-      <nav class="_container"><a href="/barecss/site/">Home</a> <a href="/barecss/site/basics">Basics</a> <a class="_active" href="/barecss/site/test.html">Lab</a> 
+      <nav class="_container">
+        <div class="_color_2" style="margin:-.5rem !important"><a class="_a1" href="/barecss/site/">Home</a><a class="_a1" href="/barecss/site/basics">Basics</a><a class="_a1" href="/barecss/site/lab">Lab</a>
+        </div>
       </nav>
-      <hr>
-      <article class="_container">
-        <details>
-          <summary class="_no_select">Summary</summary>
-          <div class="_content _scrollable">
-            <div class="_container">
-              <pre>// details</pre>
-            </div>
+      <article style="padding-bottom:1.8rem">
+        <hr>
+        <section class="_container">
+          <div class="_color_1" style="margin:-.5rem !important"><a class="_a2 _active" href="/barecss/site/lab/test.html">Test</a>
           </div>
-        </details>
-      </article>
-      <hr>
-      <article class="_container">
-        <pre class="_scrollable">
+        </section>
+        <hr>
+        <section class="_container"><span class="_u_dotted">Dotted</span> 
+          <span class="_u_dashed">Dashed</span> 
+          <span class="_u_double">Double</span> 
+          <span class="_u_wavy">Wavy</span> 
+        </section>
+        <hr>
+        <section class="_container">
+          <details>
+            <summary class="_no_select">Summary</summary>
+            <div class="_content _scrollable">
+              <div class="_container">
+                <pre class="_scrollable pre">
 name             = BareCSS
 version          = 0.1.0.(alpha)
 
 title            = Test | BareCSS
-description      = Testing upcoming features and upgrades.
-vision           = To create the best collection of a clean layout.
+description      = Testing new stuff.
+vision           = To create the best collection of clean layouts.
 
 author           = Techie Joe
 year             = 2025
 license          = MIT
 
 layout           = undefined
-pageid           = test
+pageid           = lab/test
 siteUrl          = https://techiejoe.github.io/barecss
 homeUri          = /barecss/site/
 
 og_url           = https://techiejoe.github.io/barecss?utm_source=homescreen
 og_type          = website
 og_title         = Test | BareCSS
-og_description   = Testing upcoming features and upgrades.
+og_description   = Testing new stuff.
 og_image         = 
 og_imageAlt      = 
 </pre>
+              </div>
+            </div>
+          </details>
+        </section>
+        <hr>
       </article>
       <aside id="_asides"></aside>
     </main>
     <footer>
       <hr class="_m0">
-      <div class="_container"><small>&copy; 2025 Techie Joe. All rights reserved.</small></div>
+      <div class="_container"><small>&copy; 2025 Techie Joe</small></div>
     </footer>
     <aside id="_widgets"></aside>
     <script type="text/javascript" src="/barecss/site/js/theme_v1.0.js?v=0.1.0.(alpha)"></script>

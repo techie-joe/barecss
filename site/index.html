@@ -1,4 +1,28 @@
-<!DOCTYPE html>
+
+<style>
+  #logo {
+    font-weight: 600;
+    margin-left: -.5rem;
+    margin-right: .25rem;
+    padding: .25rem .5rem;
+    display: inline-block;
+    cursor: default;
+    border-radius: .3rem;
+  }
+  #logo .s1 { color:#000 }
+  #logo .s2 { color:#1b36b0 }
+  ._dark #logo .s1 { color:#fff }
+  ._dark #logo .s2 { color:#7a8eea }
+  a #logo { cursor:pointer }
+  a #logo:hover { background-color:#fff }
+  ._dark a #logo:hover { background-color:#fff3 }
+  a #logo:active { opacity:.3 }
+  .maindesc {
+    font-size: 0.9em;
+    line-height: 1.25;
+    vertical-align: text-top;
+  }
+</style><!DOCTYPE html>
 <html class="_hidden" lang="en">
   
   <!-- BareCSS v0.1.0.(alpha) |  -->
@@ -18,29 +42,6 @@
     <!--[if lt IE 9]><script src="//unpkg.com/html5shiv@3.7.3/dist/html5shiv.min.js"></script><![endif]-->
     <link id="_style" rel="stylesheet" media="all" href="/barecss/site/css/main.css">
     <style>/* write your style here */</style>
-    <style>
-      #logo {
-        font-weight: 600;
-        margin-left: -.5rem;
-        margin-right: .25rem;
-        padding: .25rem .5rem;
-        display: inline-block;
-        cursor: default;
-        border-radius: .3rem;
-      }
-      #logo .s1 { color:#000 }
-      #logo .s2 { color:#1b36b0 }
-      ._dark #logo .s1 { color:#fff }
-      ._dark #logo .s2 { color:#7a8eea }
-      a #logo { cursor:pointer }
-      a #logo:hover { background-color:#8883 }
-      a #logo:active { opacity:.3 }
-      .maindesc {
-        font-size: 0.9em;
-        line-height: 1.25;
-        vertical-align: text-top;
-      }
-    </style>
     <style></style>
   </head>
   <body>
@@ -49,11 +50,13 @@
     </header>
     <hr>
     <main>
-      <nav class="_container"><a class="_active" href="/barecss/site/">Home</a> <a href="/barecss/site/basics">Basics</a> <a href="/barecss/site/test.html">Lab</a> 
+      <nav class="_container">
+        <div class="_color_2" style="margin:-.5rem !important"><a class="_a1 _active" href="/barecss/site/">Home</a><a class="_a1" href="/barecss/site/basics">Basics</a><a class="_a1" href="/barecss/site/lab">Lab</a>
+        </div>
       </nav>
       <hr>
       <article class="_container">
-        <pre class="_scrollable">Vision  : To create the best collection of a clean layout.
+        <pre class="_scrollable pre">Vision  : To create the best collection of clean layouts.
 
 Author  : Techie Joe
 Year    : 2025
@@ -65,7 +68,7 @@ LICENSE : MIT</pre>
     </main>
     <footer>
       <hr class="_m0">
-      <div class="_container"><small>&copy; 2025 Techie Joe. All rights reserved.</small></div>
+      <div class="_container"><small>&copy; 2025 Techie Joe</small></div>
     </footer>
     <aside id="_widgets"></aside>
     <script type="text/javascript" src="/barecss/site/js/theme_v1.0.js?v=0.1.0.(alpha)"></script>

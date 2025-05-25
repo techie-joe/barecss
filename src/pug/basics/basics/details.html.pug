@@ -1,0 +1,32 @@
+extends ../../core/_html
+
+block append vars
+  - pageid = 'basics/details'
+  - title = `Details | ${name}`
+  - description = 'Styling details and summary elements.'
+
+block append style
+  style.
+  //- style.
+
+block header
+  header._container
+    +logo
+    span.maindesc= description
+  hr
+
+block article
+  nav._container: +main_nav
+  article(style="padding-bottom:1.8rem")
+    hr
+    section._container: +basic_nav
+    hr
+    section._container
+      details
+        summary._no_select Summary
+        div._content._scrollable
+          ._container
+            pre._scrollable.pre
+              +pageData
+      //- details
+    hr

@@ -1,5 +1,4 @@
 extends ../core/_html
-include ../core/_logo
 
 block append vars
   - pageid = 'index'
@@ -19,7 +18,7 @@ block article
   nav._container: +main_nav
   hr
   article._container
-    pre._scrollable
+    pre._scrollable.pre
       .
         Vision  : !{vision}
 

@@ -1,11 +1,41 @@
-mixin main_nav
-  -
-    var main_nav_links = [
-      //- pageid, uri, title
-      ['index','','Home'],
-      ['basics','basics','Basics'],
-      ['test','test.html','Lab'],
-    ];
-  each v in main_nav_links
-    a(href=homeUri+v[1] class=(pageid === v[0]?'_active':'')) #{v[2]}
+mixin menu_style_1(links)
+  each v in links
+    - classes = ['_no_u'];
+    - if(pageid === v[0]) classes = ['_no_color']
+    a(href=homeUri+v[1] class=classes.join(' ')) #{v[2]}
     +_
+
+mixin menu_style_a1(links)
+  div(style="margin:-.5rem !important")._color_2
+    each v in links
+      - classes = ['_a1'];
+      - if(pageid === v[0]) classes = ['_a1 _active']
+      a(href=homeUri+v[1] class=classes.join(' ')) #{v[2]}
+
+mixin menu_style_a2(links)
+  div(style="margin:-.5rem !important")._color_1
+    each v in links
+      - classes = ['_a2'];
+      - if(pageid === v[0]) classes = ['_a2 _active']
+      a(href=homeUri+v[1] class=classes.join(' ')) #{v[2]}
+
+mixin main_nav
+  //- pageid, uri, title
+  +menu_style_a1([
+    ['index','','Home'],
+    ['basics','basics','Basics'],
+    ['lab','lab','Lab'],
+  ])
+
+mixin basic_nav
+  //- pageid, uri, title
+  +menu_style_a2([
+    ['basics/link','basics/link.html','Link'],
+    ['basics/details','basics/details.html','Details'],
+  ])
+
+mixin lab_nav
+  //- pageid, uri, title
+  +menu_style_a2([
+      ['lab/test','lab/test.html','Test'],
+  ])
