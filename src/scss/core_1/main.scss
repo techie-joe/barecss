@@ -94,7 +94,6 @@ pre { line-height:1.25 }
 ._clearfix {
   &::before, &::after { content: ""; display: table; clear: both }  
 }
-// ---------------------------------------------------------------
 
 // enforce correct font weight.
 // fix font weight in Chrome, Edge, and Safari.
@@ -135,20 +134,17 @@ summary { cursor:pointer;display: list-item; /* 2 */ }
 // fix display in IE 10+.
 template { @extend ._hidden; }
 
-// --------------------------------------------------------- hr */
 // better looking default horizontal rule.
 // 1. Fix box sizing in Firefox.
 // 2. Show overflow in Edge and IE.
 hr {
-  box-sizing: content-box; height: .05rem; /* 1 */
+  box-sizing: content-box; height:0; /* 1 */
   overflow: visible; /* 2 */
   @extend ._block;
   @extend ._reset_padding;
   border:1px solid #8884;
   margin: .5rem 0;
 }
-
-// ------------------------------------------------------ media */
 
 // remove border on images inside <a> links in IE 10.
 img { border-style: none }
@@ -162,8 +158,6 @@ audio, canvas, iframe, img, svg, video { vertical-align:middle }
 // modern media defaults
 picture { @extend ._block; max-width:100%; height:auto }
 
-// ------------------------------------------------------ table */
-
 table {
 
   // set default table
@@ -174,8 +168,6 @@ table {
   &._table { th,td { @extend ._border; padding: .25em } }
 
 }
-
-// ------------------------------------------------------- form */
 
 // reset fieldset in all browsers.
 fieldset {
@@ -504,7 +496,6 @@ a,._a {
 ._print_block  { display: block !important }
 ._print_inline { display: inline !important }
 
-*::before{ content: none !important }
 *,
 *::before,
 *::after {
@@ -514,6 +505,7 @@ a,._a {
   box-shadow: none !important;
   text-shadow: none !important;
 }
+*::before{ content: none !important }
 
 // ------------------------------------------------------ links */
 a, a:visited { text-decoration: underline }
@@ -571,7 +563,7 @@ h1, h2, h3 { page-break-after: avoid }
 // ._maincolum { flex:auto }
 // ._menuitem { margin:.25rem }
 
-.pre { padding:1em 0;margin:0 }
+.pre { padding:.5em 0;margin:0;font-size:.9em }
 
 footer {
   & { position:fixed;top:auto;bottom:0;left:0;right:0 }

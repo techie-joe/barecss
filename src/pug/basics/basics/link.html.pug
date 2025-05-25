@@ -58,19 +58,3 @@ block article
       script.
         document.getElementById('hyperlink').href+='?t='+(new Date().getTime());
     hr
-    section._container
-      |#[span._u Underlined] 
-      |#[span._u_dotted Dotted] 
-      |#[span._u_dashed Dashed] 
-      |#[span._u_double Double] 
-      |#[span._u_wavy Wavy] 
-    hr
-    section._container
-      details
-        summary._no_select Summary
-        div._content._scrollable
-          ._container
-            pre._scrollable.pre
-              +pageData
-      //- details
-    hr
