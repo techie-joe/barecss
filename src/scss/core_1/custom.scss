@@ -4,4 +4,28 @@
 
 @use "copyright";
 
+// ---------------------------------------------------------------
+// custom
+// ---------------------------------------------------------------
+
+// ._p,p,pre { margin: .5rem 0 }
+// ._h7,._t1 { font-size: 1rem }
+// ._t1 { font-weight: normal }
+// ._header_layout,
+// ._footer_layout,
+// ._main_layout { margin:.5rem }
+// ._view_layout,
+// ._mainflex { height: 100% }
+// ._sidecolum { flex: 0 1 10em }
+// ._maincolum { flex:auto }
+// ._menuitem { margin:.25rem }
+
+.pre { font-size:.9em }
+._scrollable.pre { padding-bottom:1em; }
+
+footer {
+  & { position:fixed;top:auto;bottom:0;left:0;right:0 }
+  ._container { margin:0;padding:.5rem }
+}
+
 main nav._container { margin:-.5rem auto; }
