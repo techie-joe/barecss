@@ -6,14 +6,14 @@ mixin menu_style_1(links)
     +_
 
 mixin menu_style_a1(links)
-  div(style="margin:-.5rem !important")._color_2
+  ._color_2: nav._container
     each v in links
       - classes = ['_a1'];
       - if(pageid === v[0]) classes = ['_a1 _active']
       a(href=homeUri+v[1] class=classes.join(' ')) #{v[2]}
 
 mixin menu_style_a2(links)
-  div(style="margin:-.5rem !important")
+  nav._container
     each v in links
       - classes = ['_a2'];
       - if(pageid === v[0]) classes = ['_a2 _active']
@@ -22,20 +22,26 @@ mixin menu_style_a2(links)
 mixin main_nav
   //- pageid, uri, title
   +menu_style_a1([
-    ['index','','Home'],
     ['basics','basics','Basics'],
+    ['core','core','Core'],
     ['lab','lab','Lab'],
+  ])
+
+mixin core_nav
+  //- pageid, uri, title
+  +menu_style_a2([
+    ['core/link','core/link.html','Link'],
+    ['core/details','core/details.html','Details'],
   ])
 
 mixin basic_nav
   //- pageid, uri, title
   +menu_style_a2([
-    ['basics/link','basics/link.html','Link'],
-    ['basics/details','basics/details.html','Details'],
   ])
 
 mixin lab_nav
   //- pageid, uri, title
   +menu_style_a2([
       ['lab/test','lab/test.html','Test'],
+      ['lab/temp','lab/temp.html','Temp'],
   ])

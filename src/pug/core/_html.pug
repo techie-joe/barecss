@@ -30,6 +30,7 @@ block document
 
         block stylesheet
           link#_style(rel="stylesheet" media='all' href=homeUri+"css/main.css")
+          link#_style(rel="stylesheet" media='all' href=homeUri+"css/custom.css")
         
         block style
           style.
@@ -40,7 +41,9 @@ block document
       body
 
         block header
-          header !{title} / _html layout
+          header
+            h1 !{title}
+            p !{description}
 
         block main
           main

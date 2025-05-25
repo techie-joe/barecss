@@ -83,7 +83,8 @@ body {
   @extend ._clearfix;
 }
 
-pre { line-height:1.25 }
+// improve readability and correct scrollbar behavior
+pre { line-height:1.2 }
 
 // clearfix : ----------------------------------------------------
 // to clear pass floating elements.

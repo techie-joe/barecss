@@ -1,7 +1,7 @@
 extends ../../core/_html
 
 block append vars
-  - pageid = 'basics/details'
+  - pageid = 'core/details'
   - title = `Details | ${name}`
   - description = 'Styling details and summary elements.'
 
@@ -12,14 +12,14 @@ block append style
 block header
   header._container
     +logo
-    span.maindesc= description
+    span#maindesc= description
   hr
 
 block article
-  nav._container: +main_nav
+  +main_nav
   article(style="padding-bottom:1.8rem")
     hr
-    section._container: +basic_nav
+    +core_nav
     hr
     section._container
       details

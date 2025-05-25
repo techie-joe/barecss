@@ -17,7 +17,7 @@
   a #logo:hover { background-color:#fff }
   ._dark a #logo:hover { background-color:#fff3 }
   a #logo:active { opacity:.3 }
-  .maindesc {
+  #maindesc {
     font-size: 0.9em;
     line-height: 1.25;
     vertical-align: text-top;
@@ -41,24 +41,22 @@
     <link rel="icon" type="image/x-icon" sizes="any" href="/barecss/site/icons/favicon.ico"/>
     <!--[if lt IE 9]><script src="//unpkg.com/html5shiv@3.7.3/dist/html5shiv.min.js"></script><![endif]-->
     <link id="_style" rel="stylesheet" media="all" href="/barecss/site/css/main.css">
+    <link id="_style" rel="stylesheet" media="all" href="/barecss/site/css/custom.css">
     <style>/* write your style here */</style>
   </head>
   <body>
     <header class="_container"><a href="/barecss/site/">
-        <div class="_no_select" id="logo"><span class="s1">Bare</span><span class="s2">CSS</span></div></a><span class="maindesc">Common components.</span>
+        <div class="_no_select" id="logo"><span class="s1">Bare</span><span class="s2">CSS</span></div></a><span id="maindesc">Common layouts.</span>
     </header>
     <hr>
     <main>
-      <nav class="_container">
-        <div class="_color_2" style="margin:-.5rem !important"><a class="_a1" href="/barecss/site/">Home</a><a class="_a1 _active" href="/barecss/site/basics">Basics</a><a class="_a1" href="/barecss/site/lab">Lab</a>
-        </div>
-      </nav>
+      <div class="_color_2">
+        <nav class="_container"><a class="_a1 _active" href="/barecss/site/basics">Basics</a><a class="_a1" href="/barecss/site/core">Core</a><a class="_a1" href="/barecss/site/lab">Lab</a>
+        </nav>
+      </div>
       <hr>
       <nav class="_container">
-        <div style="margin:-.5rem !important"><a class="_a2" href="/barecss/site/basics/link.html">Link</a><a class="_a2" href="/barecss/site/basics/details.html">Details</a>
-        </div>
       </nav>
-      <hr>
       <aside id="_asides"></aside>
     </main>
     <footer>

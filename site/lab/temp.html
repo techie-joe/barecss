@@ -30,7 +30,7 @@
   
   <head>
     <meta charset="utf-8"/>
-    <title>BareCSS</title>
+    <title>Temp | BareCSS</title>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1"/>
     <meta id="_color_scheme" name="color-scheme" content="light dark"/>
@@ -43,30 +43,11 @@
     <link id="_style" rel="stylesheet" media="all" href="/barecss/site/css/main.css">
     <link id="_style" rel="stylesheet" media="all" href="/barecss/site/css/custom.css">
     <style>/* write your style here */</style>
-    <style>
-      #logo {
-        display: block;
-        text-align: center;
-        font-size: 3em;
-        margin: 1em auto;
-      }
-      #maindesc {
-        display: block;
-        text-align: center;
-        position: relative;
-        top: -3em;
-        margin-bottom:1em;
-      }
-      header._container {
-        max-width:60em;
-        padding-left:.5rem;padding-right:.5rem;
-        margin-left:auto;margin-right:auto;
-      }
-    </style>
+    <style></style>
   </head>
   <body>
-    <header class="_container"><span>
-        <div class="_no_select" id="logo"><span class="s1">Bare</span><span class="s2">CSS</span></div></span><span id="maindesc">Minimal framework for a clean layout.</span>
+    <header class="_container"><a href="/barecss/site/">
+        <div class="_no_select" id="logo"><span class="s1">Bare</span><span class="s2">CSS</span></div></a><span id="maindesc">Temporary lab stuff.</span>
     </header>
     <hr>
     <main>
@@ -74,15 +55,51 @@
         <nav class="_container"><a class="_a1" href="/barecss/site/basics">Basics</a><a class="_a1" href="/barecss/site/core">Core</a><a class="_a1" href="/barecss/site/lab">Lab</a>
         </nav>
       </div>
-      <hr>
-      <article class="_container">
-        <pre class="_scrollable pre">Vision  : To create the best collection of clean layouts.
+      <article style="padding-bottom:1.8rem">
+        <hr>
+        <nav class="_container"><a class="_a2" href="/barecss/site/lab/test.html">Test</a><a class="_a2 _active" href="/barecss/site/lab/temp.html">Temp</a>
+        </nav>
+        <hr>
+        <section class="_container"><span class="_u_dotted">Dotted</span> 
+          <span class="_u_dashed">Dashed</span> 
+          <span class="_u_double">Double</span> 
+          <span class="_u_wavy">Wavy</span> 
+        </section>
+        <hr>
+        <section class="_container">
+          <details>
+            <summary class="_no_select">Summary</summary>
+            <div class="_content _scrollable">
+              <div class="_container">
+                <pre class="_scrollable pre">
+name             = BareCSS
+version          = 0.1.0.(alpha)
 
-Author  : Techie Joe
-Year    : 2025
-Version : 0.1.0.(alpha)
+title            = Temp | BareCSS
+description      = Temporary lab stuff.
+vision           = To create the best collection of clean layouts.
 
-LICENSE : MIT</pre>
+author           = Techie Joe
+year             = 2025
+license          = MIT
+
+layout           = undefined
+pageid           = lab/temp
+siteUrl          = https://techiejoe.github.io/barecss
+homeUri          = /barecss/site/
+
+og_url           = https://techiejoe.github.io/barecss?utm_source=homescreen
+og_type          = website
+og_title         = Temp | BareCSS
+og_description   = Temporary lab stuff.
+og_image         = 
+og_imageAlt      = 
+</pre>
+              </div>
+            </div>
+          </details>
+        </section>
+        <hr>
       </article>
       <aside id="_asides"></aside>
     </main>

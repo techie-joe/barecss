@@ -6,16 +6,34 @@ block append vars
 
 block append style
   style.
+    #logo {
+      display: block;
+      text-align: center;
+      font-size: 3em;
+      margin: 1em auto;
+    }
+    #maindesc {
+      display: block;
+      text-align: center;
+      position: relative;
+      top: -3em;
+      margin-bottom:1em;
+    }
+    header._container {
+      max-width:60em;
+      padding-left:.5rem;padding-right:.5rem;
+      margin-left:auto;margin-right:auto;
+    }
   //- style.
 
 block header
   header._container
     +logo
-    span.maindesc= description
+    span#maindesc= description
   hr
 
 block article
-  nav._container: +main_nav
+  +main_nav
   hr
   article._container
     pre._scrollable.pre
