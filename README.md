@@ -1,10 +1,7 @@
 # BareCSS
-Minimal framework for a clean layout.
+Minimal framework for a clean interface.
 
 [Visit site](https://techie-joe.github.io/barecss/site)
-
-## Vision
-To create the best collection of clean layouts.
 
 ## Credit
 ```

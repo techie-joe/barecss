@@ -265,7 +265,7 @@ a[href],._a {
   &._neutral           { color: inherit }
   &:hover,&._hover     { color: $linkTc_hover }
   &:active,&._active   { color: $linkTc_active }
-
+  
   &._dark,._dark & {
     &:visited,&._visited { color: $dark_linkTc_visited }
     &,&._link            { color: $dark_linkTc }
@@ -284,6 +284,7 @@ a[href]._a1,._a1 {
   }
   &:hover,&._hover { background-color: #8884; }
   &:active,&._active { background-color: #8888; }
+  &:active { opacity:.3 }
   
   &._dark,._dark & {
     &,&._link {
