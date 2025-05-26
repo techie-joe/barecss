@@ -5,13 +5,14 @@
   description = 'Minimal framework for a clean interface.'
   version     = '0.1.0.(alpha)'
 
-  //- metadata
-  thisYear    = new Date().getFullYear()
-
   //- credit
   author      = 'Techie Joe'
-  year        = thisYear
   license     = 'MIT'
+
+  //- metadata
+  now         = new Date()
+  today       = now.toDateString()
+  year        = now.getFullYear()
 
   //- urls
   localUrl       = 'http://localhost/barecss/site/'
@@ -50,13 +51,12 @@ mixin pageData
   +l
   +join([
     `name             = ${name}`,
-    `version          = ${version}`,
-    ``,
     `title            = ${title}`,
     `description      = ${description}`,
-    `vision           = ${vision}`,
+    `version          = ${version}`,
     ``,
     `author           = ${author}`,
+    `today            = ${today}`,
     `year             = ${year}`,
     `license          = ${license}`,
     ``,
