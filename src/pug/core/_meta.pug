@@ -6,16 +6,16 @@ meta(name="viewport" content="width=device-width, initial-scale=1")/
 meta(http-equiv="X-UA-Compatible" content="IE=edge, chrome=1")/
 
 //- themes
-meta#_color_scheme(name="color-scheme" content=colorScheme)/
-meta#_theme_color(name="theme-color" content=themeColor)/
+meta#_color_scheme(name="color-scheme" content=colorScheme||'')/
+meta#_theme_color(name="theme-color" content=themeColor||'')/
 
 //- icons
 //- : prioritization sequence: first match, exact-size, type, then "any".
-link(rel="apple-touch-icon" type="image/png"     sizes="180x180" href=homeUri+"icons/apple-touch-icon.png")/
-link(rel="icon"             type="image/png"     sizes="32x32"   href=homeUri+"icons/favicon-32x32.png")/
-link(rel="icon"             type="image/png"     sizes="16x16"   href=homeUri+"icons/favicon-16x16.png")/
-link(rel="icon"             type="image/x-icon"  sizes="any"     href=homeUri+"icons/favicon.ico")/
-//- link(rel="icon"             type="image/svg+xml" sizes="any"     href=homeUrl+"icons/icon.svg" )/
+link(rel="apple-touch-icon" type="image/png"     sizes="180x180" href=appendVersion(homeUri+"icons/apple-touch-icon.png"))/
+link(rel="icon"             type="image/png"     sizes="32x32"   href=appendVersion(homeUri+"icons/favicon-32x32.png"))/
+link(rel="icon"             type="image/png"     sizes="16x16"   href=appendVersion(homeUri+"icons/favicon-16x16.png"))/
+link(rel="icon"             type="image/x-icon"  sizes="any"     href=appendVersion(homeUri+"icons/favicon.ico"))/
+//- link(rel="icon"             type="image/svg+xml" sizes="any"     href=appendVersion(homeUrl+"icons/icon.svg"))/
 
 //- manifest
 //- enable if you're building a PWA Apps

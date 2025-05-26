@@ -1,4 +1,4 @@
-extends ../../core/_html
+extends ../../main/_html
 
 block append vars
   - pageid = 'lab'
@@ -13,10 +13,9 @@ block header
   header._container
     +logo
     span#maindesc= description
-  hr
+  +main_nav
 
 block article
-  +main_nav
+  +lab_nav
+  hr
   article
-    hr
-    +lab_nav

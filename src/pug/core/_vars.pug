@@ -1,13 +1,13 @@
 -
   //- project
-  name        = 'BareCSS'
-  title       = 'BareCSS'
-  description = 'Minimal framework for a clean interface.'
-  version     = '0.1.0.(alpha)'
+  name        = '[project_name]'
+  title       = '[untitled]'
+  description = '[undescribed]'
+  version     = '[version]'
 
   //- credit
-  author      = 'Techie Joe'
-  license     = 'MIT'
+  author      = '[unknown]'
+  license     = '[unknown]'
 
   //- metadata
   now         = new Date()
@@ -15,25 +15,25 @@
   year        = now.getFullYear()
 
   //- urls
-  localUrl       = 'http://localhost/barecss/site/'
-  siteUrl        = 'https://techiejoe.github.io/barecss'
-  authorUrl      = 'https://techiejoe.github.io'
-  sourceUrl      = 'https://github.com/techie-joe/barecss'
+  localUrl       = '[local_url]'
+  siteUrl        = '[site_url]'
+  authorUrl      = '[author_url]'
+  sourceUrl      = '[source_url]'
 
   //- open graph metadata for social media sharing
-  og_url         = siteUrl + '?utm_source=homescreen'
+  og_url         = siteUrl? siteUrl + '?utm_source=homescreen' : undefined;
   og_type        = 'website'
   og_title       = title
   og_description = description
-  og_image       = ''
-  og_imageAlt    = ''
+  og_image       = undefined
+  og_imageAlt    = undefined
 
   //- uris
   homeUri     = '/barecss/site/'
 
   //- styling
   colorScheme = 'light dark'
-  themeColor  = '#222222'
+  themeColor  = undefined
   htmlClass   = []
 
   //- en or en-US following the BCP 47 language tag standard
@@ -47,18 +47,28 @@
   INCLUDE_MANIFEST        = false
   INCLUDE_SERVICE_WORKERS = false
 
+  //- project status
+  const DEVELOPMENT    = 'DEVELOPMENT'
+  const PRODUCTION     = 'PRODUCTION'
+  const PROJECT_STATUS = DEVELOPMENT
+
+  // host names (case sensitive)
+  const LOCALHOST      = 'localhost'
+  const HOST           = LOCALHOST
+
 mixin pageData
   +l
   +join([
     `name             = ${name}`,
-    `title            = ${title}`,
-    `description      = ${description}`,
     `version          = ${version}`,
     ``,
     `author           = ${author}`,
     `today            = ${today}`,
     `year             = ${year}`,
     `license          = ${license}`,
+    ``,
+    `title            = ${title}`,
+    `description      = ${description}`,
     ``,
     `layout           = ${layout}`,
     `pageid           = ${pageid}`,

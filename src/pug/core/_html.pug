@@ -1,22 +1,21 @@
 include _functions
 include _mixins
 include _vars
-include _logo
-include _nav
 
 block vars
-  - INCLUDE_THEMEJS = true
+  - layout = 'core/_html'
 
 block updatePageData
   -
+    if(typeof htmlClass !== 'object') { htmlClass=[] }
     if(INCLUDE_THEMEJS) { htmlClass.push('_hidden') }
     og_title = title
     og_description = description
-    og_url  = siteUrl? siteUrl + '?utm_source=homescreen' : '';
+    og_url  = siteUrl? siteUrl + '?utm_source=homescreen' : undefined;
 
 block document
   doctype html
-  html(lang=lang class=htmlClass)
+  html(lang=lang class=htmlClass.join(' '))
     |
     | <!-- #{name} v#{version} | #{copyright} -->
     | <!-- layout:#{layout} -->
@@ -29,12 +28,10 @@ block document
           include _meta
 
         block stylesheet
-          link#_style(rel="stylesheet" media='all' href=homeUri+"css/main.css")
-          link#_style(rel="stylesheet" media='all' href=homeUri+"css/custom.css")
         
         block style
           style.
-            /* write your style here */
+            /* your style goes here */
           //- style.
 
     block body
@@ -42,22 +39,19 @@ block document
 
         block header
           header
-            h1 !{title}
-            p !{description}
 
         block main
           main
 
             block article
-              article._container|hi, there
+              article._container: pre.
+                // Your content goes here.
 
             block aside
               aside#_asides
         
         block footer
           footer
-            hr._m0
-            ._container: small| &copy; !{year} !{author}
 
         block widget
           aside#_widgets
@@ -72,7 +66,7 @@ block document
             +jsv(homeUri+'sw/sw.j')(defer)
 
           script.
-            console.log('hi, there');
+            // your script goes here
           //- script.
 
         block final

@@ -1,4 +1,4 @@
-extends ../../core/_html
+extends ../../main/_html
 
 block append vars
   - pageid = 'core'
@@ -9,9 +9,19 @@ block header
   header._container
     +logo
     span#maindesc= description
-  hr
+  +main_nav
+
+mixin menu(links)
+  each v in links
+    a(href=homeUri+v[1])._a2 #{v[2]}
 
 block article
-  +main_nav
-  hr
   +core_nav
+  hr
+  article
+    nav._container
+      +menu([
+        ['core/blank','core/blank.html','Blank'],
+        ['core/html','core/html.html','Html'],
+      ])
+    hr

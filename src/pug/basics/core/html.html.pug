@@ -1,0 +1,21 @@
+extends ../../core/_html
+
+block append vars
+  - pageid = 'core/html'
+  - siteUrl += '/core/html.html'
+
+block header
+  header._container: pre
+    .
+      Hello, there.
+
+      This is a placeholder to get you started.
+
+      Copy the code from '!{pageid}' to create your own page.
+
+      #[a(href='./') Back]
+    |
+    |
+
+block article
+  article._container: pre: +pageData()

@@ -1,8 +1,11 @@
-extends ../core/_html
+extends _html
 
 block append vars
-  - pageid = 'index'
-  - title = name
+  - pageid   = 'index'
+  - siteUrl += '/index.html'
+  -
+    title       = 'BareCSS'
+    description = 'Minimal framework for a clean interface.'
 
 block append style
   style.
@@ -30,26 +33,21 @@ block header
   header._container
     +logo
     span#maindesc= description
-  hr
+  +main_nav
 
 block article
-  +main_nav
-  hr
-  article._container
-    pre._scrollable.pre
-      .
-        Name         : !{name}
-        Title        : !{title}
-        Description  : !{description}
-        Version      : !{version}
+  article._container: pre._scrollable.pre.
+    Name         : !{name}
+    Title        : !{title}
+    Description  : !{description}
+    Version      : !{version}
 
-        Author       : !{author}
-        Year         : !{year}
-        LICENSE      : !{license}
+    Author       : !{author}
+    Year         : !{year}
+    LICENSE      : !{license}
 
-        URL          : !{siteUrl}
-        URI          : !{homeUri} 
+    URL          : !{siteUrl}
+    URI          : !{homeUri} 
 
-        Last updated : !{today}
-      |
-      //- 
+    Last updated : !{today}
+  |

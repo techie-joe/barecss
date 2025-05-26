@@ -1,4 +1,4 @@
-extends ../../core/_html
+extends ../../main/_html
 
 block append vars
   - pageid = 'core/link'
@@ -13,14 +13,12 @@ block header
   header._container
     +logo
     span#maindesc= description
-  hr
+  +main_nav
 
 block article
-  +main_nav
+  +core_nav
+  hr
   article(style="padding-bottom:1.8rem")
-    hr
-    +core_nav
-    hr
     nav._container
       a(href='#')._a2#hyperlink4 Hyperlink
       a(href='#')._a2._link Link
@@ -29,8 +27,8 @@ block article
       a(href='#')._a2._active Active
       script.
         document.getElementById('hyperlink4').href+='?t='+(new Date().getTime());
-    hr
-    nav._container
+    hr._mb0
+    nav._color_2
       a(href='#')._a1#hyperlink3 Hyperlink
       a(href='#')._a1._link Link
       a(href='#')._a1._visited Visited
@@ -38,7 +36,7 @@ block article
       a(href='#')._a1._active Active
       script.
         document.getElementById('hyperlink3').href+='?t='+(new Date().getTime());
-    hr
+    hr._mt0
     section._container
       |#[a(href='#')#hyperlink Hyperlink] 
       |#[a(href='#')._link Link] 

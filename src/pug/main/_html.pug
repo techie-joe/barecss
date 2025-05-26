@@ -1,0 +1,20 @@
+extends ../core/_html
+
+block append vars
+  include _vars
+  include _logo
+  include _nav
+  - layout = 'main/_html'
+  - INCLUDE_THEMEJS = true
+
+block prepend style
+  +logo_style
+
+block stylesheet
+  link#_style(rel="stylesheet" media='all' href=homeUri+"css/main.css")
+  link#_style(rel="stylesheet" media='all' href=homeUri+"css/custom.css")
+
+block footer
+  footer
+    hr._m0
+    ._container: small| &copy; !{year} !{author}

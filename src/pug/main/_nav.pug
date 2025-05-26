@@ -13,7 +13,7 @@ mixin menu_style_a1(links)
       a(href=homeUri+v[1] class=classes.join(' ')) #{v[2]}
 
 mixin menu_style_a2(links)
-  nav._container(style="padding:0 .25rem")
+  nav._container
     each v in links
       - classes = ['_a2'];
       - if(pageid === v[0]) classes = ['_a2 _active']
@@ -21,15 +21,31 @@ mixin menu_style_a2(links)
 
 mixin main_nav
   //- pageid, uri, title
-  +menu_style_a1([
-    ['basics','basics','Basics'],
-    ['core','core','Core'],
-    ['lab','lab','Lab'],
-  ])
+  hr._mb0
+  #main_nav
+    +menu_style_a1([
+      ['basics','basics','Basics'],
+      ['core','core','Core'],
+      ['lab','lab','Lab'],
+    ])
+  hr._mt0
 
 mixin core_nav
   //- pageid, uri, title
+  //- ['core/form','core/form.html','Form'],
+  //- ['core/fieldset','core/fieldset.html','Fieldset'],
+  //- ['core/legend','core/legend.html','Legend'], 
+  //- ['core/label','core/label.html','Label'],
+  //- ['core/input','core/input.html','Input'],
+  //- ['core/select','core/select.html','Select'],
+  //- ['core/textarea','core/textarea.html','Textarea'],
+  //- ['core/checkbox','core/checkbox.html','Checkbox'],
+  //- ['core/radio','core/radio.html','Radio'],
   +menu_style_a2([
+    ['core/text','core/text.html','Text'],
+    ['core/image','core/image.html','Image'],
+    ['core/table','core/table.html','Table'],
+    ['core/button','core/button.html','Button'],
     ['core/link','core/link.html','Link'],
     ['core/details','core/details.html','Details'],
   ])

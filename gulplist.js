@@ -1,7 +1,7 @@
 const
   buildList = {
     pug: [
-      'index',
+      'main',
       'basics'
     ],
     scss: [
@@ -10,7 +10,7 @@ const
   },
   watchList = {
     pug: [
-      'index',
+      'main',
       'basics'
     ],
     scss: [

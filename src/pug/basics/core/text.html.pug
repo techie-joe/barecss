@@ -1,7 +1,7 @@
 extends ../../main/_html
 
 block append vars
-  - pageid = 'core/details'
+  - pageid = 'core/text'
   - title = `Details | ${name}`
   - description = 'Styling details and summary elements.'
 
@@ -20,11 +20,8 @@ block article
   hr
   article(style="padding-bottom:1.8rem")
     section._container
-      details
-        summary._no_select Summary
-        div._content._scrollable
-          ._container
-            pre._scrollable.pre
-              +pageData
-      //- details
+      |#[span._u_dotted Dotted] 
+      |#[span._u_dashed Dashed] 
+      |#[span._u_double Double] 
+      |#[span._u_wavy Wavy] 
     hr

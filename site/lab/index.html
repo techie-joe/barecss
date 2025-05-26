@@ -1,32 +1,8 @@
-
-<style>
-  #logo {
-    font-weight: 600;
-    margin-left: -.25rem;
-    margin-right: .5rem;
-    padding: .25rem .5rem;
-    display: inline-block;
-    cursor: default;
-    border-radius: .3rem;
-  }
-  #logo .s1 { color:#000 }
-  #logo .s2 { color:#1b36b0 }
-  ._dark #logo .s1 { color:#fff }
-  ._dark #logo .s2 { color:#7a8eea }
-  a #logo { cursor:pointer }
-  a #logo:hover { background-color:#fff }
-  ._dark a #logo:hover { background-color:#fff3 }
-  a #logo:active { opacity:.3 }
-  #maindesc {
-    font-size: 0.9em;
-    line-height: 1.25;
-    vertical-align: text-top;
-  }
-</style><!DOCTYPE html>
+<!DOCTYPE html>
 <html class="_hidden" lang="en">
   
-  <!-- BareCSS v0.1.0.(alpha) |  -->
-  <!-- layout: -->
+  <!-- BareCSS v0.1.0.alpha |  -->
+  <!-- layout:main/_html -->
   
   <head>
     <meta charset="utf-8"/>
@@ -35,31 +11,57 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1"/>
     <meta id="_color_scheme" name="color-scheme" content="light dark"/>
     <meta id="_theme_color" name="theme-color" content="#222222"/>
-    <link rel="apple-touch-icon" type="image/png" sizes="180x180" href="/barecss/site/icons/apple-touch-icon.png"/>
-    <link rel="icon" type="image/png" sizes="32x32" href="/barecss/site/icons/favicon-32x32.png"/>
-    <link rel="icon" type="image/png" sizes="16x16" href="/barecss/site/icons/favicon-16x16.png"/>
-    <link rel="icon" type="image/x-icon" sizes="any" href="/barecss/site/icons/favicon.ico"/>
+    <link rel="apple-touch-icon" type="image/png" sizes="180x180" href="/barecss/site/icons/apple-touch-icon.png?v=0.1.0.alpha"/>
+    <link rel="icon" type="image/png" sizes="32x32" href="/barecss/site/icons/favicon-32x32.png?v=0.1.0.alpha"/>
+    <link rel="icon" type="image/png" sizes="16x16" href="/barecss/site/icons/favicon-16x16.png?v=0.1.0.alpha"/>
+    <link rel="icon" type="image/x-icon" sizes="any" href="/barecss/site/icons/favicon.ico?v=0.1.0.alpha"/>
     <!--[if lt IE 9]><script src="//unpkg.com/html5shiv@3.7.3/dist/html5shiv.min.js"></script><![endif]-->
     <link id="_style" rel="stylesheet" media="all" href="/barecss/site/css/main.css">
     <link id="_style" rel="stylesheet" media="all" href="/barecss/site/css/custom.css">
-    <style>/* write your style here */</style>
+    <style>
+      #logo {
+        font-weight: 600;
+        margin-left: -.25rem;
+        margin-right: .5rem;
+        padding: .25rem .5rem;
+        display: inline-block;
+        cursor: default;
+        border-radius: .3rem;
+      }
+      #logo .s1 { color:#000 }
+      #logo .s2 { color:#1b36b0 }
+      ._dark #logo .s1 { color:#fff }
+      ._dark #logo .s2 { color:#7a8eea }
+      a #logo { cursor:pointer }
+      a #logo:hover { background-color:#fff }
+      ._dark a #logo:hover { background-color:#fff3 }
+      a #logo:active { opacity:.3 }
+      #maindesc {
+        font-size: 0.9em;
+        line-height: 1.25;
+        vertical-align: text-top;
+      }
+    </style>
+    <style>/* your style goes here */</style>
     <style></style>
   </head>
   <body>
     <header class="_container"><a href="/barecss/site/">
         <div class="_no_select" id="logo"><span class="s1">Bare</span><span class="s2">CSS</span></div></a><span id="maindesc">Testing upcoming features and upgrades.</span>
     </header>
-    <hr>
-    <main>
+    <hr class="_mb0"/>
+    <div id="main_nav">
       <div class="_color_2">
         <nav class="_container"><a class="_a1" href="/barecss/site/basics">Basics</a><a class="_a1" href="/barecss/site/core">Core</a><a class="_a1 _active" href="/barecss/site/lab">Lab</a>
         </nav>
       </div>
-      <article>
-        <hr>
-        <nav class="_container" style="padding:0 .25rem"><a class="_a2" href="/barecss/site/lab/test.html">Test</a><a class="_a2" href="/barecss/site/lab/temp.html">Temp</a>
-        </nav>
-      </article>
+    </div>
+    <hr class="_mt0"/>
+    <main>
+      <nav class="_container"><a class="_a2" href="/barecss/site/lab/test.html">Test</a><a class="_a2" href="/barecss/site/lab/temp.html">Temp</a>
+      </nav>
+      <hr>
+      <article></article>
       <aside id="_asides"></aside>
     </main>
     <footer>
@@ -67,8 +69,8 @@
       <div class="_container"><small>&copy; 2025 Techie Joe</small></div>
     </footer>
     <aside id="_widgets"></aside>
-    <script type="text/javascript" src="/barecss/site/js/theme_v1.0.js?v=0.1.0.(alpha)"></script>
-    <script>console.log('hi, there');</script>
+    <script type="text/javascript" src="/barecss/site/js/theme_v1.0.js?v=0.1.0.alpha"></script>
+    <script>// your script goes here</script>
     
     <!-- IE needs 512+ bytes: https://techie-joe.github.io/library/html5/ie#ie-needs-512-bytes -->
     

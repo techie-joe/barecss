@@ -1,0 +1,25 @@
+extends ../../main/_html
+
+block append vars
+  - pageid = 'lab/temp'
+  - title = `Temp | ${name}`
+  - description = 'Temporary lab stuff.'
+
+block append style
+  style.
+  //- style.
+
+block header
+  header._container
+    +logo
+    span#maindesc= description
+  +main_nav
+
+block article
+  +lab_nav
+  hr
+  article(style="padding-bottom:1.8rem")
+    section._container: pre._scrollable.pre.
+      // Temporary lab stuff that will be implemented in the future.
+    //- pre.
+    section._container: pre.pre.
