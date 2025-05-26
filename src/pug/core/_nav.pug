@@ -13,7 +13,7 @@ mixin menu_style_a1(links)
       a(href=homeUri+v[1] class=classes.join(' ')) #{v[2]}
 
 mixin menu_style_a2(links)
-  nav._container
+  nav._container(style="padding:0 .25rem")
     each v in links
       - classes = ['_a2'];
       - if(pageid === v[0]) classes = ['_a2 _active']
