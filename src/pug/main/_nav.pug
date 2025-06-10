@@ -8,8 +8,8 @@ mixin menu_style_1(links)
 mixin menu_style_a1(links)
   ._color_2: nav._container
     each v in links
-      - classes = ['_a1'];
-      - if(pageid === v[0]) classes = ['_a1 _active']
+      - classes = ['_a11'];
+      - if(pageid === v[0]) classes = ['_a11 _active']
       a(href=homeUri+v[1] class=classes.join(' ')) #{v[2]}
 
 mixin menu_style_a2(links)
@@ -48,6 +48,7 @@ mixin core_nav
     ['core/text','core/text.html','Text'],
     ['core/link','core/link.html','Link'],
     ['core/details','core/details.html','Details'],
+    ['core/flex','core/flex.html','Flex'],
   ])
 
 mixin basic_nav
@@ -58,6 +59,6 @@ mixin basic_nav
 mixin lab_nav
   //- pageid, uri, title
   +menu_style_a2([
-      ['lab/test','lab/test.html','Test'],
-      ['lab/temp','lab/temp.html','Temp'],
+    ['lab/test','lab/test.html','Test'],
+    ['lab/temp','lab/temp.html','Temp'],
   ])

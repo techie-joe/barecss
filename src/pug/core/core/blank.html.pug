@@ -5,17 +5,15 @@ block append vars
   - siteUrl += '/core/blank.html'
 
 block header
-  header._container: pre
-    .
+  header._container
+    pre._scrollable.pre.
       Hello, there.
-
       This is a placeholder to get you started.
-
       Copy the code from '!{pageid}' to create your own page.
 
-      #[a(href='./') Back]
-    |
-    |
+      #[a(href='./')._link._a31 Back]
+    hr
 
 block article
-  article._container: pre: +pageData()
+  article._container
+    pre._scrollable.pre: +pageData()

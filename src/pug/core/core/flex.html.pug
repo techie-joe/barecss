@@ -1,0 +1,54 @@
+extends ../../main/_html
+
+block append vars
+  - pageid = 'core/flex'
+  - title = `Flex | ${name}`
+  - description = 'Flex components.'
+
+block append style
+  style.
+  //- style.
+
+block header
+  header._container
+    +logo
+    span#maindesc= description
+  +main_nav
+
+block article
+  +core_nav
+  hr
+  article
+    section
+      style.
+        ._flex {
+          gap:.5rem;
+        }
+        .i {
+          padding:.25em .5em;
+          text-align: center;
+          font-size:.8em;
+        }
+        ._f {
+          padding:.25em .5em;
+          text-align: center;
+          font-size:.8em;
+        }
+      //- style.
+      div._flex
+        div.i._outline Normal Item 1
+        div._f._outline Flex Item 2
+        div.i._outline Normal Item 2
+        div._f._outline Flex Item 3
+        div.i._outline Normal Item 3
+      hr
+      div._flex
+        div._f._outline Flex Item 1
+        div._f._outline Flex Item 2
+        div._f._outline Flex Item 3
+      hr
+      div._flex
+        div.i._outline Normal Item 1
+        div.i._outline Normal Item 2
+        div.i._outline Normal Item 3
+      hr

@@ -28,13 +28,6 @@ const main = (() => {
   if (buildList && watchList && _dest) { } else {
     throw new Error('Please define gulplist.js');
   }
-  // map source lists
-  [buildList, watchList].forEach(list => {
-    ['html', 'php', 'txt', 'md'].forEach(type => {
-      list[type] = list.pug.map(item => `src/pug/${item}/**/*.${type}.pug`);
-    });
-    list.scss = list.scss.map(item => `src/scss/${item}/**/*.scss`);
-  });
   const
     redMessage = (message) =>'\x1B[31m'+message+'\x1B[0m',
     onPugError = function onPugError(error) {
@@ -101,7 +94,10 @@ const main = (() => {
       ignoreInitial: false
     },
     _watch = (fn, src, dest, opt = watchOpt) => function watcher() {
-      if (!isEmpty(dest, src)) watch(src, opt, fn(src, dest));
+      if (!isEmpty(dest, src)) {
+        log(`Watching:\n${src.join('\n')}`);
+        watch(src, opt, fn(src, dest));
+      }
       else log(`Error in _watch - src: ${src}, dest: ${dest}`);
     },
     // builders
@@ -111,7 +107,7 @@ const main = (() => {
       txt(buildList.txt, _dest.pages),
       md(buildList.md, _dest.pages),
     ),
-    styles = scss(buildList.scss, _dest.css),
+    styles = scss(buildList.css, _dest.css),
     // watchers
     pagesw = parallel(
       _watch(html, watchList.html, _dest.pages),
@@ -119,9 +115,15 @@ const main = (() => {
       _watch(txt, watchList.txt, _dest.pages),
       _watch(md, watchList.md, _dest.pages),
     ),
-    stylesw = _watch(scss, watchList.scss, _dest.css);
+    stylesw = _watch(scss, watchList.css, _dest.css);
 
   return {
+    test: () => {
+      log('Gulp is working!');
+      log('Build List:', buildList);
+      log('Watch List:', watchList);
+      log('Destination:', _dest);
+    },
     html,
     php,
     txt,

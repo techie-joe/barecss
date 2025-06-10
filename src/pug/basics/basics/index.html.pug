@@ -3,7 +3,7 @@ extends ../../main/_html
 block append vars
   - pageid = 'basics'
   - title = `Basics | ${name}`
-  - description = 'Common layouts.'
+  - description = 'Basic layouts.'
 
 block header
   header._container
@@ -13,4 +13,7 @@ block header
 
 block article
   +basic_nav
-  article
+  article(style="padding-bottom:1.8rem")
+    section._container: pre._scrollable.pre.
+      // Coming soon ..
+    //- pre.
