@@ -118,7 +118,7 @@ const main = (() => {
     stylesw = _watch(scss, watchList.css, _dest.css);
 
   return {
-    test: () => {
+    test: async () => {
       log('Gulp is working!');
       log('Build List:', buildList);
       log('Watch List:', watchList);
