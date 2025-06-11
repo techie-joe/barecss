@@ -18,9 +18,102 @@ block header
 block article
   +core_nav
   hr
-  article(style="padding-bottom:1.8rem")
+  article(style="padding-bottom:4rem")
     section._container
-      |#[span._u_dotted Dotted] 
-      |#[span._u_dashed Dashed] 
-      |#[span._u_double Double] 
-      |#[span._u_wavy Wavy] 
+      div
+        | normal
+        | #[span span]
+        | #[b bold]
+        | #[span._b span]
+        | #[i italic]
+        | #[span._i span]
+      div
+        | #[u underlined]
+        | #[span._u span]
+        | #[abbr(title="abbreviation") abbr]
+        | #[span._u_dotted dotted] 
+        | #[span._u_dashed dashed] 
+        | #[span._u_double double] 
+        | #[span._u_wavy wavy] 
+      div
+        | #[s strikethrough]
+        | #[span._striked span]
+      div
+        | normal
+        | #[small tag-small]
+        | #[small._small small]
+        | #[small._smaller smaller]
+        | #[small._smallest smallest]
+      div
+        | normal
+        | #[code code]
+        | #[samp samp]
+        | #[kbd kbd]
+      div
+        | normal
+        | #[sub sub]
+        | #[sup sup]
+        | H
+        | #[sup T]
+        | y_
+        | #[sub g_]
+      div
+        | #[span._lowercase LOWERCASE]
+        | #[span._uppercase uppercase]
+        | #[span._capitalize capitalized]
+      div
+        | #[span normal]
+        | #[span._tc_contra contra]
+        | #[span._tc_blue blue]
+        | #[span._tc_purple purple]
+        | #[span._tc_orange orange]
+        | #[span._tc_red red]
+        | #[span._tc_green green]
+      div
+        | #[span._border border]
+        | #[span._boxline boxline]
+        | #[span._outline outline]
+        | #[span._select select]
+    hr
+    section._container
+
+      p Use helper class to customize the visual appearance of headings and texts. They helps separate visual appearance from semantics, giving you better control over both. Use #[code._code _h1] to #[code._code _h7] for headings, and #[code._code _t1] to #[code._code _t12] for other texts.
+
+      - var heros     = 'Text Sample';
+      - var headings  = 'Text Sample';
+
+      ._text_centerx
+        p._t10 #{heros} 3
+        p._t9 #{heros} 2
+        p._t8 #{heros} 1
+        h1._h1 #{headings} 1
+        h2._h2 #{headings} 2
+        h3._h3 #{headings} 3
+        h4._h4 #{headings} 4
+        h5._h5 #{headings} 5
+        h6._h6 #{headings} 6
+        div._h7 #{headings} 7
+        p Normal Text
+
+    hr
+    section._container._flex(style="gap:1rem 2rem")
+      ._f1
+        h2._sans._h4 System Font
+        p._system._text_justify.
+          System font is the default set of fonts used by an operating system for displaying text across the user interface. The primary goal is to provide a seamless experience for users as they interact with different applications and system elements. Common examples includes "Segoe UI" on Windows, "San Francisco" on macOS, and "Roboto" on Android. They are an integral part of the overall design language and contribute to the visual identity of the operating system.
+
+      ._f3
+        h2._sans._h4 Sans
+        p._sans._text_justify.
+          Sans fonts, such as Arial and Helvetica, are known for their clean and modern look, lacking the small decorative strokes at the ends of letters. They are widely used for digital media due to their readability on screens.
+
+      ._f3
+        h2._serif._h4 Serif
+        p._serif._text_justify.
+          Serif fonts, like Times New Roman, Garamond and Georgia, feature small lines or strokes attached to the ends of letters, giving a more traditional and formal appearance. These fonts are often used in print media for their elegant look.
+
+      ._f3
+        h2._mono._h4 Monospace
+        p._mono._text_justify.
+          Monospace fonts, such as Courier New and Consolas, have characters that occupy the same horizontal space. This uniform spacing makes them ideal for displaying scripts and source codes. They align text neatly, thus enhance readability.
+

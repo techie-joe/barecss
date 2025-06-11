@@ -1,0 +1,55 @@
+extends ../../main/_html
+
+block append vars
+  - pageid = 'core/basic'
+  - title = `Basic | ${name}`
+  - description = 'Basic elements.'
+
+block header
+  header._container
+    +logo
+    span#maindesc= description
+  +main_nav
+
+mixin menu(links)
+  each v in links
+    a(href=homeUri+v[1])._a2 !{v[2]}
+
+block article
+  +core_nav
+  hr
+  article(style="padding-bottom:4rem")
+    style.
+      #indiv > * { padding:.25em .5em }
+    //- style
+    section#indiv._indiv
+      ._inblock._border border
+      ._inblock._outline outline
+      ._inblock._boxline boxline
+      ._inblock._select select
+    hr
+    section._container
+      p paragraph
+      ._p div._p paragraph
+      pre pre is in mono
+      ._pre div._pre is also in mono
+      blockquote blockquote and #[q quoted]
+      blockquote._blockquote blockquote._blockquote
+      div._blockquote div._blockquote
+
+      dl
+        dt dt term
+        dd dd description
+        dd._no_bullet dd._no_bullet
+
+      ul: li unordered list
+      ol: li ordered list
+
+      ul._no_bullet: li ul._no_bullet
+      ol._no_bullet: li ol._no_bullet
+
+      ul._no_pad: li ul._no_pad
+      ol._no_pad: li ol._no_pad
+
+      ul._plain: li ul._plain
+      ol._plain: li ol._plain

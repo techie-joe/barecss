@@ -6,7 +6,7 @@
   
   <head>
     <meta charset="utf-8"/>
-    <title>Details | BareCSS</title>
+    <title>Basic | BareCSS</title>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1"/>
     <meta id="_color_scheme" name="color-scheme" content="light dark"/>
@@ -43,11 +43,10 @@
       }
     </style>
     <style>/* your style goes here */</style>
-    <style></style>
   </head>
   <body>
     <header class="_container"><a href="/barecss/site/">
-        <div class="_no_select" id="logo"><span class="s1">Bare</span><span class="s2">CSS</span></div></a><span id="maindesc">Styling details and summary elements.</span>
+        <div class="_no_select" id="logo"><span class="s1">Bare</span><span class="s2">CSS</span></div></a><span id="maindesc">Basic elements.</span>
     </header>
     <hr class="_mb0"/>
     <div id="main_nav">
@@ -58,44 +57,58 @@
     </div>
     <hr class="_mt0"/>
     <main>
-      <nav class="_container"><a class="_a2" href="/barecss/site/core/basic.html">Basic</a><a class="_a2" href="/barecss/site/core/text.html">Text</a><a class="_a2" href="/barecss/site/core/table.html">Table</a><a class="_a2" href="/barecss/site/core/link.html">Link</a><a class="_a2 _active" href="/barecss/site/core/details.html">Details</a><a class="_a2" href="/barecss/site/core/flex.html">Flex</a>
+      <nav class="_container"><a class="_a2 _active" href="/barecss/site/core/basic.html">Basic</a><a class="_a2" href="/barecss/site/core/text.html">Text</a><a class="_a2" href="/barecss/site/core/table.html">Table</a><a class="_a2" href="/barecss/site/core/link.html">Link</a><a class="_a2" href="/barecss/site/core/details.html">Details</a><a class="_a2" href="/barecss/site/core/flex.html">Flex</a>
       </nav>
       <hr>
-      <article style="padding-bottom:4em">
-        <section class="_container">
-          <details>
-            <summary class="_no_select">Summary</summary>
-            <div class="_content _scrollable">
-              <div class="_container">
-                <pre class="_scrollable pre">
-name             = BareCSS
-version          = 0.1.0.alpha
-
-author           = Techie Joe
-today            = Wed Jun 11 2025
-year             = 2025
-license          = MIT
-
-title            = Details | BareCSS
-description      = Styling details and summary elements.
-
-layout           = main/_html
-pageid           = core/details
-siteUrl          = https://techiejoe.github.io/barecss
-homeUri          = /barecss/site/
-
-og_url           = https://techiejoe.github.io/barecss?utm_source=homescreen
-og_type          = website
-og_title         = Details | BareCSS
-og_description   = Styling details and summary elements.
-og_image         = undefined
-og_imageAlt      = undefined
-</pre>
-              </div>
-            </div>
-          </details>
+      <article style="padding-bottom:4rem">
+        <style>#indiv > * { padding:.25em .5em }</style>
+        <section class="_indiv" id="indiv">
+          <div class="_inblock _border">border</div>
+          <div class="_inblock _outline">outline</div>
+          <div class="_inblock _boxline">boxline</div>
+          <div class="_inblock _select">select</div>
         </section>
         <hr>
+        <section class="_container">
+          <p>paragraph</p>
+          <div class="_p">div._p paragraph</div>
+          <pre>pre is in mono</pre>
+          <div class="_pre">div._pre is also in mono</div>
+          <blockquote>blockquote and 
+            <q>quoted</q>
+          </blockquote>
+          <blockquote class="_blockquote">blockquote._blockquote</blockquote>
+          <div class="_blockquote">div._blockquote</div>
+          <dl>
+            <dt>dt term</dt>
+            <dd>dd description</dd>
+            <dd class="_no_bullet">dd._no_bullet</dd>
+          </dl>
+          <ul>
+            <li>unordered list</li>
+          </ul>
+          <ol>
+            <li>ordered list</li>
+          </ol>
+          <ul class="_no_bullet">
+            <li>ul._no_bullet</li>
+          </ul>
+          <ol class="_no_bullet">
+            <li>ol._no_bullet</li>
+          </ol>
+          <ul class="_no_pad">
+            <li>ul._no_pad</li>
+          </ul>
+          <ol class="_no_pad">
+            <li>ol._no_pad</li>
+          </ol>
+          <ul class="_plain">
+            <li>ul._plain</li>
+          </ul>
+          <ol class="_plain">
+            <li>ol._plain</li>
+          </ol>
+        </section>
       </article>
       <aside id="_asides"></aside>
     </main>

@@ -1,0 +1,51 @@
+extends ../../main/_html
+
+block append vars
+  - pageid = 'core/table'
+  - title = `Table | ${name}`
+  - description = 'Table styles.'
+
+block append style
+  style.
+  //- style.
+
+block header
+  header._container
+    +logo
+    span#maindesc= description
+  +main_nav
+
+mixin table_example
+  table&attributes(attributes)
+    thead
+      tr
+        th Item
+        th Description
+        th Price
+    tbody
+      tr
+        td Apple
+        td A sweet red fruit
+        td $1.00
+      tr
+        td Banana
+        td A long yellow fruit
+        td $0.50
+      tr
+        td Cherry
+        td A small red fruit
+        td $0.20
+    tfoot
+      tr
+        td(colspan='2') Total
+        td $1.70
+  //- table
+//- table_example
+
+block article
+  +core_nav
+  hr
+  article(style="padding-bottom:4rem")
+    section._container._flex(style="gap:1rem")
+      ._f: +table_example._table._center_m
+      ._f: +table_example._center_m

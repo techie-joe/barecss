@@ -1,16 +1,28 @@
 
 // colors
 $baseBg: #DDD;
-$baseTc: #222;
+$baseBc: #444;
+
+$baseHg: #8884;
+$baseHc: #000;
+
+$baseAg: #8888;
+$baseAc: #000;
 
 // dark colors
 $dark_baseBg: #222;
-$dark_baseTc: #DDD;
+$dark_baseBc: #BBB;
+
+$dark_baseHg: #8884;
+$dark_baseHc: #FFF;
+
+$dark_baseAg: #8888;
+$dark_baseAc: #FFF;
 
 // color names
 $blue   : #1b36b0;
 $purple : #992299;
-$orange : #DD7700;
+$orange : #f15700;
 $red    : #DD0000;
 $green  : #008800;
 $contra : #000000;
@@ -18,19 +30,19 @@ $contra : #000000;
 // dark color names
 $dark_blue   : #7a8eea;
 $dark_purple : #c17ac1;
-$dark_orange : #e39f40;
+$dark_orange : #ff8f26;
 $dark_red    : #ff4d4d;
 $dark_green  : #00aa00;
 $dark_contra : #ffffff;
 
 // link colors
-$linkTc          : $blue;
-$linkTc_hover    : $orange;
-$linkTc_visited  : $purple;
-$linkTc_active   : $red;
+$linkBc          : $blue;
+$linkBc_hover    : $orange;
+$linkBc_visited  : $purple;
+$linkBc_active   : $red;
 
 // dark link colors
-$dark_linkTc          : $dark_blue;
-$dark_linkTc_hover    : $dark_orange;
-$dark_linkTc_visited  : $dark_purple;
-$dark_linkTc_active   : $dark_red;
+$dark_linkBc          : $dark_blue;
+$dark_linkBc_hover    : $dark_orange;
+$dark_linkBc_visited  : $dark_purple;
+$dark_linkBc_active   : $dark_red;

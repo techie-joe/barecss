@@ -13,7 +13,7 @@
 $sans: "Arial",sans-serif;
 $serif: "Georgia",serif;
 
-$monospace: "Courier New",monospace,monospace;
+$monospace: "Consolas",monospace,monospace;
 // the double monospace is to Fix font size inheritance and scaling in all browsers.
 
 $baseFont: $sans;
@@ -59,13 +59,6 @@ $baseFont: $sans;
 nav, main, article, section, header, footer, aside,
 figure, details, figcaption, hgroup, menu { display:block }
 
-// 1. Fix font size inheritance and scaling in all browsers.
-// 2. Fix the odd em font sizing in all browsers.
-._mono {
-  font-family: $monospace; /* 1 */
-  @extend ._reset_fontsize; /* 2 */
-}
-
 // 1. standardize line height for html in all browsers.
 // 2. prevent iOS adjustments after orientation changes.
 html {
@@ -83,8 +76,48 @@ body {
   @extend ._clearfix;
 }
 
+// 1. Fix font size inheritance and scaling in all browsers.
+// 2. Fix the odd em font sizing in all browsers.
+// 3. Fix line height in all browsers.
+._mono {
+  // font-family: $monospace; /* 1 */
+  @extend ._reset_fontsize; /* 2 */
+  line-height: 1.2; /* 3 */
+}
+
 // improve readability and correct scrollbar behavior
-pre { line-height:1.2 }
+pre,._pre { @extend ._mono; }
+
+// standardize line height for paragraphs in all browsers.
+p,._p { @extend ._reset_lineheight; }
+
+// standardize paragraphs spacing in all browsers.
+._h1,._h2,._h3,._h4,._h5,._h6,._h7,
+h1,h2,h3,h4,h5,h6,
+ul,ol,dl,
+blockquote,
+pre,._pre,
+p,._p { margin:.5rem 0 }
+
+// standardize font size for headings in all browsers.
+h1 { @extend ._h1; }
+._h7 { @extend ._b; }
+._h1,._h2,._h3,._h4,._h5,._h6,._h7 { @extend ._tc_contra; }
+._h7,._t1 { font-size: 1rem     }
+._h6,._t2 { font-size: 1.083rem }
+._h5,._t3 { font-size: 1.182rem }
+._h4,._t4 { font-size: 1.300rem }
+._h3,._t5 { font-size: 1.445rem }
+._h2,._t6 { font-size: 1.625rem }
+._h1,._t7 { font-size: 1.857rem }
+._t8      { font-size: 2rem     }
+._t9      { font-size: 2.25rem  }
+._t10     { font-size: 2.5rem   }
+
+// 1. fix display in Edge, IE 10+, and Firefox.
+// 2. fix display in all browsers.
+details { @extend ._block; } /* 1 */
+summary { cursor:pointer;display: list-item; /* 2 */ }
 
 // clearfix : ----------------------------------------------------
 // to clear pass floating elements.
@@ -96,12 +129,34 @@ pre { line-height:1.2 }
   &::before, &::after { content: ""; display: table; clear: both }  
 }
 
+// better looking default horizontal rule.
+// 1. Fix box sizing in Firefox.
+// 2. Show overflow in Edge and IE.
+hr {
+  box-sizing: content-box; height:0; /* 1 */
+  overflow: visible; /* 2 */
+  @extend ._block;
+  @extend ._reset_padding;
+  border:1px solid #8884;
+  margin: .5rem 0;
+}
+
+// sub, sup
+sub, sup {
+  @extend ._reset_baseline;
+  font-size: 75%;
+  position: relative;
+}
+sub { bottom:-.25em }
+sup { top:-.55em }
+
 // enforce correct font weight.
 // fix font weight in Chrome, Edge, and Safari.
 b, strong { @extend ._b; }
 
 // enforce underline and improve readability.
-a[href], u { @extend ._u; }
+a[href],._a { @extend ._u; }
+u { @extend ._u; }
 
 // remove gray background on active links in IE 10.
 a { background-color: transparent }
@@ -123,29 +178,6 @@ small,
 ._small    { font-size: 86% }
 ._smaller  { font-size: 73% }
 ._smallest { font-size: 60% }
-
-// 1. standardize line height for paragraphs in all browsers.
-p { line-height:1.5 }
-
-// 1. fix display in Edge, IE 10+, and Firefox.
-// 2. fix display in all browsers.
-details { @extend ._block; } /* 1 */
-summary { cursor:pointer;display: list-item; /* 2 */ }
-
-// fix display in IE 10+.
-template { @extend ._hidden; }
-
-// better looking default horizontal rule.
-// 1. Fix box sizing in Firefox.
-// 2. Show overflow in Edge and IE.
-hr {
-  box-sizing: content-box; height:0; /* 1 */
-  overflow: visible; /* 2 */
-  @extend ._block;
-  @extend ._reset_padding;
-  border:1px solid #8884;
-  margin: .5rem 0;
-}
 
 // remove border on images inside <a> links in IE 10.
 img { border-style: none }
@@ -181,6 +213,9 @@ fieldset {
 // Allow only vertical resizing of textareas.
 textarea { resize: vertical }
 
+// fix display in IE 10+.
+template { @extend ._hidden; }
+
 // ---------------------------------------------------------------
 // base
 // ---------------------------------------------------------------
@@ -189,11 +224,20 @@ html,body { @extend ._scrollable; scroll-behavior: smooth; }
 
 ._container { margin:.5rem }
 
-blockquote { padding: 2em; margin: 1em }
+._blockquote,blockquote { padding: .5em 1em; border-left: .25rem solid transparent; }
+._blockquote { border-left-color:#888; }
+
+dd { display: list-item; margin-inline-start: 2em }
+dd._no_bullet { display: block }
+
+ol,ul { padding-left: 2em; padding-inline-start: 2em }
 
 details { margin:-.5rem;box-sizing:border-box; }
 summary { padding:.25em .5em }
-summary:hover { background-color:#8883; }
+summary:hover {
+  @include color( $baseHc, $baseHg );
+  ._dark & { @include color( $dark_baseHc, $dark_baseHg ); }
+}
 summary:active { opacity:.3 }
 
 // ---------------------------------------------------------------
@@ -238,18 +282,18 @@ $select_tc    : #000;
 ._outline { outline: 1px solid #ff00b788 }
 
 ._color {
-  & { @include color( $baseTc, $baseBg ); }
-  &._dark,._dark & { @include color( $dark_baseTc, $dark_baseBg ); }
+  & { @include color( $baseBc, $baseBg ); }
+  &._dark,._dark & { @include color( $dark_baseBc, $dark_baseBg ); }
 }
 
 ._color_1 {
-  & { @include color( $baseTc, #ccc ); }
-  &._dark,._dark & { @include color( $dark_baseTc, #111 ); }
+  & { @include color( $baseBc, #ccc ); }
+  &._dark,._dark & { @include color( $dark_baseBc, #111 ); }
 }
 
 ._color_2 {
-  & { @include color( $baseTc, #eee ); }
-  &._dark,._dark & { @include color( $dark_baseTc, #333 ); }
+  & { @include color( $baseBc, #eee ); }
+  &._dark,._dark & { @include color( $dark_baseBc, #333 ); }
 }
 
 footer ._container,
@@ -259,63 +303,70 @@ hr {
   &._dark,._dark & { border-top-color:#000;border-bottom-color:#444 }
 }
 
-a[href],._a {
-  &:visited,&._visited { color: $linkTc_visited }
-  &,&._link            { color: $linkTc }
-  &._neutral           { color: inherit }
-  &:hover,&._hover     { color: $linkTc_hover }
-  &:active,&._active   { color: $linkTc_active }
+a,._a {
+  &._visited,&:visited { color: $linkBc_visited }
+  &,&._link            { color: $linkBc }
+  &._hover_link        { color: inherit }
+  &._hover,&:hover     { color: $linkBc_hover }
+  &._active,&:active   { color: $linkBc_active }
   
-  &._dark,._dark & {
-    &:visited,&._visited { color: $dark_linkTc_visited }
-    &,&._link            { color: $dark_linkTc }
-    &._neutral           { color: inherit }
-    &:hover,&._hover     { color: $dark_linkTc_hover }
-    &:active,&._active   { color: $dark_linkTc_active }
+  ._dark & {
+    &._visited,&:visited { color: $dark_linkBc_visited }
+    &,&._link            { color: $dark_linkBc }
+    &._hover_link        { color: inherit }
+    &._hover,&:hover     { color: $dark_linkBc_hover }
+    &._active,&:active   { color: $dark_linkBc_active }
   }
 }
 
-a[href]._a1,._a1 {
-  &,&._link {
+a._a31,
+a._a3,
+a._a2,
+a._a11,
+a._a1 {
+  &[href] { @extend ._no_u; }
+}
+
+a._a31,._a31,
+a._a3,._a3,
+a._a2,._a2,
+a._a11,._a11,
+a._a1,._a1 {
+  & {
     color: inherit;
-    text-decoration: none;
-    display:inline-block;
-    padding:0 .5em;
+    display: inline-block;
+    padding: 0 .5em;
   }
-  &:hover,&._hover { background-color: #8884; }
-  &:active,&._active { background-color: #8888; }
+  &._hover,&:hover { @include color( $baseHc, $baseHg ); }
+  &._active { @include color( $baseAc, $baseAg ); }
   &:active { opacity:.3 }
-  
-  &._dark,._dark & {
-    &,&._link {
-      color: inherit;
-      text-decoration: none;
-    }
+
+  ._dark & {
+    & { color: inherit }
+    &._hover,&:hover { @include color( $dark_baseHc, $dark_baseHg ); }
+    &._active { @include color( $dark_baseAc, $dark_baseAg ); }
   }
 }
 
-a[href]._a11,._a11 {
-  @extend ._a1;
+a._a11,._a11 {
   padding:.25em .5em;
 }
 
-a[href]._a2,._a2 {
-  @extend ._a1;
+a._a2,._a2 {
   margin:.1em;
   border-radius:.25em;
   padding:0 .5em;
 }
 
-a[href]._a3,._a3 {
-  @extend ._a1;
+a._a31,._a31,
+a._a3,._a3 {
   margin:.1em;
   border:1px solid #888;
   border-radius:.25em;
   padding:0 .5em;
 }
 
-a[href]._a31,._a31 {
-  @extend ._a3;
+a._a31,._a31 {
   padding:.25em .75em;
 }
 
@@ -354,7 +405,7 @@ a[href]._a31,._a31 {
 // fonts & texts
 ._sans { font-family: $sans }
 ._serif { font-family: $serif }
-._monospace { font-family: $monospace }
+._mono { font-family: $monospace }
 
 ._bold,._b { font-weight: bold }
 @for $i from 1 through 9 { ._b#{$i} { font-weight: $i * 100; } }
@@ -369,12 +420,14 @@ u,._u {
 ._u_double { @extend ._u; text-decoration-style: double !important }
 ._u_wavy { @extend ._u; text-decoration-style: wavy !important }
 ._no_u, ._no_deco { text-decoration: none !important }
+._hover_u:hover { text-decoration: underline !important }
 
 ._i { font-style: italic !important }
 
 ._striked { text-decoration: line-through }
 
 ._uppercase { text-transform: uppercase }
+._lowercase { text-transform: lowercase }
 ._capitalize { text-transform: capitalize }
 
 ._no_color { color: inherit !important }
@@ -386,6 +439,8 @@ u,._u {
   -ms-user-select:none;
   user-select:none;
 } 
+
+._indiv { font-size:0; > * { @extend ._reset_fontsize; } }
 
 ._block { display:block }
 ._table { display:table }
@@ -408,14 +463,20 @@ u,._u {
 ._text_center  { text-align: center  }
 ._text_justify { text-align: justify }
 
+._center_m { margin-left: auto; margin-right: auto; }
+
 ._valign_top    { vertical-align: top }
 ._valign_middle { vertical-align: middle }
 ._valign_bottom { vertical-align: bottom }
 
-._flex { display:flex }
+._flex { display:flex; flex-wrap:wrap; }
 ._f_row { flex-direction:row }
 ._f_column { flex-direction:column }
 ._f { flex:1 }
+._f1 { flex:1 0 100% }
+._f2 { flex:1 0 40% }
+._f3 { flex:1 0 30% }
+._f4 { flex:1 0 20% }
 
 // ._radius
 $radiuses: (
@@ -530,7 +591,7 @@ a,._a {
 *::before{ content: none !important }
 
 // ------------------------------------------------------ links */
-a, a:visited { text-decoration: underline }
+a[href], a[href]:visited { text-decoration: underline }
 
 a[href]::after { content: " (" attr(href) ")" }
 abbr[title]::after { content: " (" attr(title) ")" }

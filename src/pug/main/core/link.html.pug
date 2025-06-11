@@ -18,7 +18,7 @@ block header
 block article
   +core_nav
   hr
-  article(style="padding-bottom:1.8rem")
+  article(style="padding-bottom:4rem")
     nav._container
       a(href='#')._a31#hyperlink31 Hyperlink
       a(href='#')._a31._link Link
@@ -70,15 +70,16 @@ block article
       |#[a(href='#')._visited Visited] 
       |#[a(href='#')._hover Hover] 
       |#[a(href='#')._active Active] 
-      br
-      |#[a(href='#')._neutral Neutral] 
       |#[a(href='#')._no_color No-Color] 
-      |Normal
       br
-      |#[a(href='#')._link._no_u No-Underline] 
-      |#[a(href='#')._link._u_dotted Dotted] 
-      |#[a(href='#')._link._u_dashed Dashed] 
-      |#[a(href='#')._link._u_double Double] 
-      |#[a(href='#')._link._u_wavy Wavy] 
+      |#[a(href='#')._hover_link Hover-Link] 
+      |#[a(href='#')._hover_link._u_dotted Dotted] 
+      |#[a(href='#')._hover_link._u_dashed Dashed] 
+      |#[a(href='#')._hover_link._u_double Double] 
+      |#[a(href='#')._hover_link._u_wavy Wavy] 
+      br
+      |#[a(href='#')._hover_link._no_u No-Underline] 
+      |#[a(href='#')._hover_link._no_u._hover_u Hover-Underline] 
+      br
       script.
         document.getElementById('hyperlink').href+='?t='+(new Date().getTime());

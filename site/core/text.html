@@ -58,14 +58,116 @@
     </div>
     <hr class="_mt0"/>
     <main>
-      <nav class="_container"><a class="_a2 _active" href="/barecss/site/core/text.html">Text</a><a class="_a2" href="/barecss/site/core/link.html">Link</a><a class="_a2" href="/barecss/site/core/details.html">Details</a><a class="_a2" href="/barecss/site/core/flex.html">Flex</a>
+      <nav class="_container"><a class="_a2" href="/barecss/site/core/basic.html">Basic</a><a class="_a2 _active" href="/barecss/site/core/text.html">Text</a><a class="_a2" href="/barecss/site/core/table.html">Table</a><a class="_a2" href="/barecss/site/core/link.html">Link</a><a class="_a2" href="/barecss/site/core/details.html">Details</a><a class="_a2" href="/barecss/site/core/flex.html">Flex</a>
       </nav>
       <hr>
-      <article style="padding-bottom:1.8rem">
-        <section class="_container"><span class="_u_dotted">Dotted</span> 
-          <span class="_u_dashed">Dashed</span> 
-          <span class="_u_double">Double</span> 
-          <span class="_u_wavy">Wavy</span> 
+      <article style="padding-bottom:4rem">
+        <section class="_container">
+          <div>
+            normal
+            <span>span</span>
+            <b>bold</b>
+            <span class="_b">span</span>
+            <i>italic</i>
+            <span class="_i">span</span>
+          </div>
+          <div>
+            <u>underlined</u>
+            <span class="_u">span</span>
+            <abbr title="abbreviation">abbr</abbr>
+            <span class="_u_dotted">dotted</span> 
+            <span class="_u_dashed">dashed</span> 
+            <span class="_u_double">double</span> 
+            <span class="_u_wavy">wavy</span> 
+          </div>
+          <div>
+            <s>strikethrough</s>
+            <span class="_striked">span</span>
+          </div>
+          <div>
+            normal
+            <small>tag-small</small>
+            <small class="_small">small</small>
+            <small class="_smaller">smaller</small>
+            <small class="_smallest">smallest</small>
+          </div>
+          <div>
+            normal
+            <code>code</code>
+            <samp>samp</samp>
+            <kbd>kbd</kbd>
+          </div>
+          <div>
+            normal
+            <sub>sub</sub>
+            <sup>sup</sup>
+            H
+            <sup>T</sup>
+            y_
+            <sub>g_</sub>
+          </div>
+          <div><span class="_lowercase">LOWERCASE</span>
+            <span class="_uppercase">uppercase</span>
+            <span class="_capitalize">capitalized</span>
+          </div>
+          <div><span>normal</span>
+            <span class="_tc_contra">contra</span>
+            <span class="_tc_blue">blue</span>
+            <span class="_tc_purple">purple</span>
+            <span class="_tc_orange">orange</span>
+            <span class="_tc_red">red</span>
+            <span class="_tc_green">green</span>
+          </div>
+          <div><span class="_border">border</span>
+            <span class="_boxline">boxline</span>
+            <span class="_outline">outline</span>
+            <span class="_select">select</span>
+          </div>
+        </section>
+        <hr>
+        <section class="_container">
+          <p>Use helper class to customize the visual appearance of headings and texts. They helps separate visual appearance from semantics, giving you better control over both. Use <code class="_code">_h1</code> to <code class="_code">_h7</code> for headings, and <code class="_code">_t1</code> to <code class="_code">_t12</code> for other texts.</p>
+          <div class="_text_centerx">
+            <p class="_t10">Text Sample 3</p>
+            <p class="_t9">Text Sample 2</p>
+            <p class="_t8">Text Sample 1</p>
+            <h1 class="_h1">Text Sample 1</h1>
+            <h2 class="_h2">Text Sample 2</h2>
+            <h3 class="_h3">Text Sample 3</h3>
+            <h4 class="_h4">Text Sample 4</h4>
+            <h5 class="_h5">Text Sample 5</h5>
+            <h6 class="_h6">Text Sample 6</h6>
+            <div class="_h7">Text Sample 7</div>
+            <p>Normal Text</p>
+          </div>
+        </section>
+        <hr>
+        <section class="_container _flex" style="gap:1rem 2rem">
+          <div class="_f1">
+            <h2 class="_sans _h4">System Font</h2>
+            <p class="_system _text_justify">
+              System font is the default set of fonts used by an operating system for displaying text across the user interface. The primary goal is to provide a seamless experience for users as they interact with different applications and system elements. Common examples includes "Segoe UI" on Windows, "San Francisco" on macOS, and "Roboto" on Android. They are an integral part of the overall design language and contribute to the visual identity of the operating system.
+              
+            </p>
+          </div>
+          <div class="_f3">
+            <h2 class="_sans _h4">Sans</h2>
+            <p class="_sans _text_justify">
+              Sans fonts, such as Arial and Helvetica, are known for their clean and modern look, lacking the small decorative strokes at the ends of letters. They are widely used for digital media due to their readability on screens.
+              
+            </p>
+          </div>
+          <div class="_f3">
+            <h2 class="_serif _h4">Serif</h2>
+            <p class="_serif _text_justify">
+              Serif fonts, like Times New Roman, Garamond and Georgia, feature small lines or strokes attached to the ends of letters, giving a more traditional and formal appearance. These fonts are often used in print media for their elegant look.
+              
+            </p>
+          </div>
+          <div class="_f3">
+            <h2 class="_mono _h4">Monospace</h2>
+            <p class="_mono _text_justify">Monospace fonts, such as Courier New and Consolas, have characters that occupy the same horizontal space. This uniform spacing makes them ideal for displaying scripts and source codes. They align text neatly, thus enhance readability.</p>
+          </div>
         </section>
       </article>
       <aside id="_asides"></aside>
