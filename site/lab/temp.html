@@ -63,10 +63,13 @@
       <hr>
       <article style="padding-bottom:1.8rem">
         <section class="_container">
-          <pre class="_scrollable pre">// New features to be implemented soon ..</pre>
+          <pre class="_scrollable pre">// New features to be implemented soon ..
+
+<span id="localStorage"></span></pre>
         </section>
+        <hr>
         <section class="_container">
-          <pre class="pre"></pre>
+          <button onclick="localStorage.clear();updateLog();">Clear Storage</button>
         </section>
       </article>
       <aside id="_asides"></aside>
@@ -76,6 +79,30 @@
       <div class="_container"><small>&copy; 2025 Techie Joe</small></div>
     </footer>
     <aside id="_widgets"></aside>
+    <script>
+      (()=>{
+        const
+          w = window,
+          d = document,
+          eid = (id) => d.getElementById(id),
+          hid = (id,html) => eid(id).innerHTML=html,
+          storage = localStorage,
+          { log } = console;
+        const
+          updateLog = w.updateLog = () => {
+            hid('localStorage', [
+              `storage.length: ${storage.length}`
+            ].join('\n'));
+          };
+        //
+        w.addEventListener("storage", (event) => {
+          updateLog();
+        });
+        d.addEventListener('DOMContentLoaded', () => {
+          updateLog();
+        });
+      })();
+    </script>
     <script type="text/javascript" src="/barecss/site/js/theme_v1.0.js?v=0.1.0.alpha"></script>
     <script>// your script goes here</script>
     

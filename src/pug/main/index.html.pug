@@ -5,7 +5,7 @@ block append vars
   - siteUrl += '/index.html'
   -
     title       = 'BareCSS'
-    description = 'Simple framework for a clean interface.'
+    description = 'Simple framework for websites and web applications.'
 
 block append style
   style.
@@ -16,22 +16,17 @@ block append style
       margin: 1em auto;
     }
     #maindesc {
-      display: block;
       text-align: center;
       position: relative;
       top: -3em;
-      margin-bottom:1em;
-    }
-    header._container {
-      max-width:60em;
-      padding-left:.5rem;padding-right:.5rem;
+      margin:1em auto;
     }
   //- style.
 
 block header
-  header._container._center_m._table
+  header._center_m._table
     +logo
-    span#maindesc= description
+    #maindesc|!{description}
   +main_nav
 
 block article
@@ -50,3 +45,13 @@ block article
 
     Last updated : !{today}
   |
+
+block append script
+  //- script.
+    (()=>{
+      const
+        w = window,
+        storage = localStorage,
+        { log } = console;
+    })();
+  //- 

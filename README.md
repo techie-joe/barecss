@@ -1,5 +1,5 @@
 # BareCSS
-Minimal framework for a clean interface.
+Simple framework for websites and web applications.
 
 [Visit site](https://techie-joe.github.io/barecss/site)
 
