@@ -22,11 +22,12 @@ block article
     style.
       #indiv > * { padding:.25em .5em }
     //- style
-    section#indiv._indiv
+    section#indiv._indiv._container: +repeat(2)
       ._inblock._border border
       ._inblock._outline outline
       ._inblock._boxline boxline
       ._inblock._select select
+      br
     hr
     section._container
       p paragraph
