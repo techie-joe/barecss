@@ -43,7 +43,7 @@
       }
     </style>
     <style>/* your style goes here */</style>
-    <style></style>
+    <style>#btns button { margin:.25rem }</style>
   </head>
   <body>
     <header class="_container"><a href="/barecss/site/">
@@ -68,8 +68,9 @@
 <span id="localStorage"></span></pre>
         </section>
         <hr>
-        <section class="_container">
-          <button onclick="localStorage.clear();updateLog();">Clear Storage</button>
+        <section class="_container" id="btns">
+          <button onclick="localStorage.clear();updateLog();">Clear Storage</button><br>
+          <button onclick="theme.change();updateLog();">Change Theme</button>
         </section>
       </article>
       <aside id="_asides"></aside>
